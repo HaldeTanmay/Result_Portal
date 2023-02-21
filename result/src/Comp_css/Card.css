@@ -1,0 +1,63 @@
+.btn1{
+    background-color: #cecece;
+    width: 47vw;
+    height: 6vh;
+    border-radius: 16px;
+    font-family: initial;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: linear-gradient(to left, #007fff 50%, #cecece 50%);
+    background-size: 200% 100%;
+    background-position: left bottom;
+    transition: all .1s ease-out;
+    cursor: pointer;
+  }
+  
+  .btn1:hover {
+    background-position: right bottom;
+    color: white;
+  }
+
+
+.container1{
+    height: fit-content;
+    width: 65vw;
+    box-shadow: grey -3px 4px 21px -2px;
+    border-radius: 12px;
+    margin-top: 1.2vh;
+    animation: moveToRight 1s ease;
+}
+
+.main{
+    text-align: -webkit-center;
+}
+
+#label{
+    font-size: 2rem;
+    color: blue;
+}
+
+.state{
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    overflow-y: scroll;
+    height: 80vh;   
+}
+.univ{
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    overflow-y: scroll;
+    height: 77vh;   
+}
+
+
+  @keyframes moveToRight {
+    0% {
+        transform: translateX(-600px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}

@@ -1,0 +1,34 @@
+.Uni {
+	text-align: center;
+	color: Green;
+}
+.Uni-header {
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+}
+.Uni-link {
+	color: #61dafb;
+}
+
+@keyframes Uni-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+#s_label{
+	font-size: 3rem;
+    font-weight: 700;
+    font-family: sans-serif;
+    margin-top: 2vh;
+	margin-bottom: 2vh;
+}

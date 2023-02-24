@@ -38,6 +38,7 @@ class Semester extends React.Component {
     render(props) {
 
         const { DataisLoaded, items, s_name, un_name, dp_name } = this.state;
+        console.log(items.length)
         if (!DataisLoaded) return <div>
             <h1> wait some time.... </h1> </div>;
 

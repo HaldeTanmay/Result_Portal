@@ -1,8 +1,8 @@
 import React from "react";
 import Home from './Components/Home';
 import State from './Components/State';
-import { Credentials } from './Components/Credentials';
-import { Result } from './Components/Result';
+import Credentials from './Components/Credentials';
+import Result from './Components/Result';
 import University from './Components/University';
 import Year from './Components/Year';
 import Ad from './Components/Ad';
@@ -10,6 +10,8 @@ import Label from './Components/Label';
 import Accordian from './Components/Accordian';
 import UnLabel from './Components/UnLabel';
 import DpLabel from './Components/DpLabel';
+import ShowResult from './Components/ShowResult';
+import ResultWindow from './Components/ResultWindow';
 import {
   BrowserRouter as Router,
   Routes,
@@ -28,7 +30,7 @@ export default function App() {
           </Route>
           <Route exact path="/year" element={< Year />}>
           </Route>
-          <Route exact path="/credential" element={< Credentials />}>
+          <Route exact path="/cr" element={< Credentials />}>
           </Route>
           <Route exact path="/result" element={< Result />}>
           </Route>
@@ -41,6 +43,10 @@ export default function App() {
           <Route exact path="/label2" element={< UnLabel />}>
           </Route>
           <Route exact path="/label3" element={< DpLabel />}>
+          </Route>
+          <Route exact path="/sr" element={< ShowResult />}>
+          </Route>
+          <Route exact path="/rw" element={< ResultWindow />}>
           </Route>
         </Routes>
       </Router>

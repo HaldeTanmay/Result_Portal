@@ -6,11 +6,11 @@ const Data = [
 
     {
         id: 2,
-        title: 'Arunachal Pradesh	'
+        title: 'Arunachal Pradesh'
     },
     {
         id: 3,
-        title: 'Assam	'
+        title: 'Assam'
     },
     {
         id: 4,

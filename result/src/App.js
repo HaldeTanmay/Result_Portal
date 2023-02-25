@@ -6,6 +6,7 @@ import Result from './Components/Result';
 import University from './Components/University';
 import Year from './Components/Year';
 import Ad from './Components/Ad';
+import Ad2 from './Components/Ad2';
 import Label from './Components/Label';
 import Accordian from './Components/Accordian';
 import UnLabel from './Components/UnLabel';
@@ -35,6 +36,8 @@ export default function App() {
           <Route exact path="/result" element={< Result />}>
           </Route>
           <Route exact path="/ad" element={< Ad />}>
+          </Route>
+          <Route exact path="/ad2" element={< Ad2 />}>
           </Route>
           <Route exact path="/ac" element={< Accordian />}>
           </Route>

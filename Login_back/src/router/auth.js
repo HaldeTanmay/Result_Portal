@@ -76,12 +76,12 @@ router.post('/cr', async (req, res) => {
     // console.log(req.body);
     // res.json({ message: "awesome" })
     try {
-        const { s_name, dp_name, un_name, sem, year, exam_name, name, roll } = req.body;
+        const { s_name, dp_name, un_name, sem, year, exam_name, name, roll, mothers_name } = req.body;
         const roll1 = `${roll}.0`;
-        if (!exam_name || !name || !roll1 || !s_name || !dp_name || !un_name || !sem || !year) {
+        if (!exam_name || !name || !roll1 || !s_name || !dp_name || !un_name || !sem || !year || !mothers_name) {
             return res.status(400).json({ error: "Plz filled the data" });
         }
-        const userLogin = await UserModel.findOne({ dp_name: dp_name, un_name: un_name, sem: sem, year: year, exam_name: exam_name, name: name, roll: roll1 });
+        const userLogin = await UserModel.findOne({ dp_name: dp_name, un_name: un_name, sem: sem, year: year, exam_name: exam_name, name: name, roll: roll1, mothers_name: mothers_name });
 
 
         if (userLogin) {

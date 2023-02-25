@@ -12,6 +12,7 @@ export default function Credentials(props) {
     const year = location.state.year;
     const [name, setName] = useState('');
     const [exam_name, setExam_name] = useState('');
+    const [mothers_name, setMothers_name] = useState('');
     const [roll, setRoll] = useState('');
     const checkResult = async (e) => {
         e.preventDefault();
@@ -21,7 +22,7 @@ export default function Credentials(props) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                s_name, dp_name, un_name, sem, year, exam_name, name, roll
+                s_name, dp_name, un_name, sem, year, exam_name, name, roll, mothers_name
             })
         });
         const data = await res.json();
@@ -65,31 +66,36 @@ export default function Credentials(props) {
 
     return (
         <div className='main'>
-            <input type="text" name="" id="r_but" value={location.state.year} readOnly={true} /><br />
+            <div className='heading'>
+                <b>{location.state.s_name} | {location.state.un_name} | {location.state.dp_name} | {location.state.sem} </b>
+            </div>
+            <div className="body">
+                <input type="text" name="" id="r_but" value={location.state.year} readOnly={true} /><br />
 
-            <select id="r_but1" onChange={HandleChangeOp}>
+                <select id="r_but1" onChange={HandleChangeOp}>
 
-                <option value="choose" disabled selected="selected">
-                    -- Select Exam Name --
-                </option>
-                {items.map(({ label }) => (
-                    <option value={label}>
-                        {label}
+                    <option value="choose" disabled selected="selected">
+                        -- Select Exam Name --
                     </option>
-                ))}
+                    {items.map(({ label }) => (
+                        <option value={label}>
+                            {label}
+                        </option>
+                    ))}
 
-            </select>
+                </select>
 
-            <br />
+                <br />
 
-            <input type="text" id="r_but" placeholder='Your Roll No.' autoComplete="off" value={roll} onChange={HandleChange} /><br />
+                <input type="text" id="r_but" placeholder='Your Roll No.' autoComplete="off" value={roll} onChange={HandleChange} /><br />
 
-            <input type="text" id="r_but" placeholder='Your Name' value={name} readOnly={true} /><br />
-            {/* <input type="text" id="r_but" placeholder='Your Name' value={name} onChange={(e) => setName(e.target.value)} /><br /> */}
+                <input type="text" id="r_but" placeholder='Your Name' value={name} readOnly={true} /><br />
+                {/* <input type="text" id="r_but" placeholder='Your Name' value={name} onChange={(e) => setName(e.target.value)} /><br /> */}
 
+                <input type="text" id="r_but" placeholder='Your Mothers Name' autoComplete="off" value={mothers_name} onChange={(e) => setMothers_name(e.target.value)} /><br />
 
-
-            <button type='submit' onClick={checkResult}>Check Result</button>
+                <button type='submit' onClick={checkResult}>Check Result</button>
+            </div>
 
         </div>
     )

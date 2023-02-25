@@ -10,7 +10,7 @@ export default function Year(props) {
     const handleClick = event => {
         year = event.currentTarget.value;
         console.log(year);
-        navigate("/cr", { state: { year: year, dp_name: location.state.dp_name, s_name: location.state.s_name, un_name: location.state.un_name, sem: location.state.sem } })
+        navigate("/ad2", { state: { year: year, dp_name: location.state.dp_name, s_name: location.state.s_name, un_name: location.state.un_name, sem: location.state.sem } })
     };
     const [show, setShow] = useState(false);
     return (

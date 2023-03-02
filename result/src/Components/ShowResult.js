@@ -1,6 +1,7 @@
 import React from 'react'
-import '../Comp_css/Univer.css'
+import '../Comp_css/Result.css'
 import ResultWindow from './ResultWindow';
+import Pdf from "react-to-pdf";
 // import Card from './Card';
 // import { useCallback } from "react";
 // const axios = require('axios');
@@ -21,12 +22,14 @@ class ShowResult extends React.Component {
             exam_name: props.exam_name,
             year: props.year,
             name: props.name,
-            roll: props.roll
+            roll: props.roll,
         };
     }
 
+
+
     componentDidMount() {
-        const { s_name, un_name, dp_name, exam_name, sem, name, roll, year } = this.state;
+        const { s_name, un_name, dp_name, exam_name, sem, name, roll, year, ssn } = this.state;
         // var s_name = { props.title };
         // fetch("https://jsonplaceholder.typicode.com/users")
         fetch(`http://localhost:4000/cr/${s_name}/${un_name}/${dp_name}/${exam_name}/${year}/${sem}/${name}/${roll}`, { params: { s_name, un_name, dp_name, exam_name, year, sem, name, roll } })
@@ -39,7 +42,10 @@ class ShowResult extends React.Component {
             })
     }
 
+
+
     render(props) {
+        const ref = React.createRef();
 
         const { DataisLoaded, items, s_name, un_name, dp_name, exam_name, sem, name, roll, year } = this.state;
 
@@ -48,9 +54,14 @@ class ShowResult extends React.Component {
 
         return (
             <div className='main'>
-                <div className="container1">
-                    <div className="univ">
-                        <div className="uni" >
+                <div className="container_r" >
+                    <div className="univ_r" ref={ref}>
+                        <div className="uni_r" >
+                            <div className="r_label">
+                                <div className='l1'>{un_name} | {dp_name} | {exam_name} | {sem}</div>
+                                <b className='b_result'>{name}</b>
+                                <div className='r_result'>{roll}</div>
+                            </div>
                             {
                                 items.map((item) => (
                                     <ResultWindow
@@ -68,12 +79,16 @@ class ShowResult extends React.Component {
                                         sub5_marks={item.sub5_marks}
                                         sub6_marks={item.sub6_marks}
                                         total={item.Total}
+                                        result={item.result}
                                     />
                                 ))
                             }
                         </div >
                     </div>
-
+                    {/* <button className='print_button' onClick={this.generateSimplePDF}>Print</button> */}
+                    <Pdf targetRef={ref} filename="Result.pdf" y={4} scale={1.2}>
+                        {({ toPdf }) => <button className='print_button' onClick={toPdf}>Print</button>}
+                    </Pdf>
                 </div>
 
             </div>

@@ -3,3 +3,133 @@
     justify-content: center;
     gap: 5vw;
 }
+
+.container_r{
+    height: 70vh;
+    min-width: 17rem;
+    width: 42vw;
+    /* max-height: fit-content; */
+    box-shadow: grey 0px 4px 17px -7px;
+    border-radius: 12px;
+    margin-top: 1.2vh;
+    animation: moveToRight 1s ease;
+}
+.univ_r{
+    text-align: -webkit-center;
+}
+.l1{
+    color: grey;
+    font-size: 2.5vw;
+    padding-top: 3vh;
+}
+
+.b_result{
+    font-size: 2.5vw;
+}
+
+.r_result{
+    color: grey;
+    font-size: 1.5rem;
+    margin-bottom: 3vh;
+}
+
+.r_data{
+    width: 20vw;
+    min-width: fit-content;
+    background-color: #e2e2e2a1;
+    /* box-shadow: grey -4px 1px 13px -2px; */
+    border-radius: 12px;
+    padding: 0px 13px;
+    padding-top: 4vh;
+    height: 33vh;
+    
+    min-width: fit-content;
+}
+
+.col1{
+    text-align: left;
+}
+
+.spacing{
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: 700;
+    margin-top: 1.5vh;
+}
+
+#line_h{
+    width: 5vw;
+    min-width: 28vh;
+}
+
+.res_end{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pass{
+    color: #05db05;
+    font-size: 1.3rem;
+    text-shadow: 0px 1px 1px #004e00;
+}
+
+.fail{
+    color: red;
+    font-size: 1.3rem;
+    text-shadow: 0px 1px 1px #004e00;
+}
+
+.arrow{
+    margin: 0 10px;
+    margin-top: 1vh;
+    margin-right: 1vw;
+}
+
+.print_button{
+    margin-top: 2vh;
+    width: 5rem;
+    height: 4vh;
+    background-color: #258edc;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .l1{
+        color: grey;
+        font-size: 7vw;
+        padding-top: 3vh;
+    }
+    
+    .b_result{
+        font-size: 7vw;
+    }
+    
+    .r_result{
+        color: grey;
+        font-size: 1.3rem;
+    margin-bottom: 1vh;
+    }
+
+    .rows{
+        display: flex;
+    justify-content: center;
+    gap: 13vw
+    }
+    
+    .r_data{
+        width: 20vw;
+    min-width: -moz-fit-content;
+    /* min-width: fit-content; */
+    background-color: #e2e2e2a1;
+    /* box-shadow: grey -4px 1px 13px -2px; */
+    border-radius: 12px;
+    padding: 0px 18px;
+    padding-top: 4vh;
+    height: 35vh;
+    min-width: fit-content;
+    }
+  }

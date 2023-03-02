@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import '../Comp_css/Credential.css'
 import { useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
+import ChoiceSem from './ChoiceSem';
+import { Input, Card } from 'antd';
+import Lottie from 'react-lottie';
+import "antd/dist/antd";
 export default function Credentials(props) {
     const location = useLocation();
     const navigate = useNavigate();
@@ -11,6 +15,7 @@ export default function Credentials(props) {
     const sem = location.state.sem;
     const year = location.state.year;
     const [name, setName] = useState('');
+    const [nameMatch, setNameMatch] = useState([]);
     const [exam_name, setExam_name] = useState('');
     const [mothers_name, setMothers_name] = useState('');
     const [roll, setRoll] = useState('');
@@ -55,6 +60,15 @@ export default function Credentials(props) {
         setExam_name(e.target.value);
     }
     const [items, setItems] = useState([]);
+    const [names, setNames] = useState([]);
+
+    // useEffect(() => {
+    //     fetch(`http://localhost:4000/cr/${s_name}/${un_name}/${dp_name}/${year}/${sem}`, { params: { s_name, un_name, dp_name, year, sem } })
+    //         .then((res) => res.json())
+    //         .then((json) => {
+    //             setItems(json.map((item) => ({ label: item })));
+    //         })
+    // }, []);
 
     useEffect(() => {
         fetch(`http://localhost:4000/cr/${s_name}/${un_name}/${dp_name}/${year}/${sem}`, { params: { s_name, un_name, dp_name, year, sem } })
@@ -63,6 +77,46 @@ export default function Credentials(props) {
                 setItems(json.map((item) => ({ label: item })));
             })
     }, []);
+    useEffect(() => {
+        fetch(`http://localhost:4000/cr/${s_name}/${un_name}/${dp_name}/${sem}/${year}/1`, { params: { s_name, un_name, dp_name, sem, year } })
+            .then((res) => res.json())
+            .then((json) => {
+                setNames(json.map((item) => ({ label: item })));
+            })
+    }, []);
+    // console.log(names);
+    const searchName = (text) => {
+        let matches = names.filter((item1) => {
+            const regex = new RegExp(`${text}`, "gi");
+            return item1.label.match(regex);
+        });
+        setNameMatch(matches);
+        console.log(nameMatch);
+        setName(text)
+    }
+    // const onSuggestHandler = (text) => {
+    //     console.log(text);
+    //     setName(text)
+    //     setNameMatch([])
+
+    // }
+    let nameData = '';
+    const onSuggestHandler = (text) => {
+        setName(text)
+        var name = text;
+        console.log(name);
+        fetch(`http://localhost:4000/cr/${s_name}/${un_name}/${dp_name}/${exam_name}/${year}/${sem}/${name}/dept/hel`, { params: { s_name, un_name, dp_name, exam_name, year, sem, name } })
+            .then((res) => res.json())
+            .then((json) => {
+                nameData = json;
+                console.log(nameData[0])
+                var intvalue = Math.floor(nameData[0]);
+                setRoll(intvalue)
+            })
+        setNameMatch([])
+
+    }
+
 
     return (
         <div className='main'>
@@ -89,14 +143,107 @@ export default function Credentials(props) {
 
                 <input type="text" id="r_but" placeholder='Your Roll No.' autoComplete="off" value={roll} onChange={HandleChange} /><br />
 
-                <input type="text" id="r_but" placeholder='Your Name' value={name} readOnly={true} /><br />
+                <input type="text" autoComplete="off" id="r_but" placeholder='Your Name' value={name} onChange={(e) => searchName(e.target.value)} />
                 {/* <input type="text" id="r_but" placeholder='Your Name' value={name} onChange={(e) => setName(e.target.value)} /><br /> */}
 
+                {nameMatch && nameMatch.map((item, i) => (
+                    <div className="suggestion col-md-12 justify-content-md-center" onClick={() => onSuggestHandler(item.label)}>{item.label}</div>
+
+                ))}
+
+                <br />
                 <input type="text" id="r_but" placeholder='Your Mothers Name' autoComplete="off" value={mothers_name} onChange={(e) => setMothers_name(e.target.value)} /><br />
 
                 <button type='submit' onClick={checkResult}>Check Result</button>
             </div>
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_vq5wzcvx.json" background="transparent" speed={1} style={{ width: '400px', height: '400px' }} loop autoPlay />
 
         </div>
+
+        // <div className="cred">
+        //     <img className="wave" src="https://meiosis-studios.github.io/Animated-Login-Form/img/wave.png" />
+        //     {/* <img class="wave" src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/master/img/wave.png">  */}
+        //     <div className="container">
+        //         <div className="img">
+        //             {/* <img src="https://cbt.man1balam.sch.id/assets/img/draw2.svg"/>  */}
+
+        // <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_vq5wzcvx.json" background="transparent" speed={1} style={{ width: '400px', height: '400px' }} loop autoPlay />
+        //             {/* <img src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/master/img/bg.svg"/>   */}
+        //         </div>
+        //         <div className="login-content">
+        //             <form>
+        //                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsdDSqZB82DuxSIQ09tzqJyPaqLT7qCvQU0lSWcPX8Zv-Qo5c0cBbh87DUWI9VmZA5QC8&usqp=CAU" />
+        //                 {/* <img src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/master/img/avatar.svg"/>   */}
+        //                 <h2 className="title">Result Portal</h2>
+        //                 <div>
+        //                     <div className="input-div one">
+        //                         {/* <div className="i">
+        //                   <i className="fa-regular fa-calendar-days" />
+        //                 </div>  */}
+        //                         <div className="div">
+        //                             {/* <h5>name</h5>  */}
+
+        //                             <input type="text" name="" value={location.state.year} readOnly={true} />
+        //                             <label for='year'>year</label>
+
+        //                         </div>
+        //                     </div>
+        //                     <div className="input-div one">
+        //                         {/* <div className="i">
+        //                   <i className="fa-regular fa-calendar-days" />
+        //                 </div>  */}
+        //                         <div className="div">
+        //                             <select class="custom-select" onChange={HandleChangeOp}>
+
+        //                                 <option value="choose" disabled selected="selected">
+        //                                     -- Select Exam Name --
+        //                                 </option>
+        //                                 {items.map(({ label }) => (
+        //                                     <option value={label}>
+        //                                         {label}
+        //                                     </option>
+        //                                 ))}
+
+        //                             </select>
+        //                         </div> </div>
+        //                     <div className="input-div one">
+        //                         {/* <div className="i">
+        //                   <i className="fa-regular fa-calendar-days" />
+        //                 </div> */}
+        //                         <div className="div">
+        //                             <input type="text" autoComplete="off" value={roll} onChange={HandleChange} />
+        //                             <label for='Roll no.'>Roll</label>
+        //                         </div>
+        //                     </div>
+        //                     <div className="input-div one">
+        //                         {/* <div className="i"> 
+        //                   <i className="fa-regular fa-calendar-days" />
+        //                 </div> */}
+        //                         <div className="div">
+        //                             <input type="text" autoComplete="off" value={name} onChange={(e) => searchName(e.target.value)} />
+        //                             <label for='Name'>Name</label>
+        //                         </div>
+        //                     </div>
+        //                     {nameMatch && nameMatch.map((item, i) => (
+        //                         <div className="suggestion col-md-12 justify-content-md-center" onClick={() => onSuggestHandler(item.label)}>{item.label}</div>
+
+        //                     ))}
+        //                     <div className="input-div one">
+        //                         {/* <div className="i"> 
+        //                   <i className="fa-regular fa-calendar-days" />
+        //                 </div> */}
+        //                         <div className="div">
+        //                             <input type="text" autoComplete="off" value={mothers_name} onChange={(e) => setMothers_name(e.target.value)} />
+        //                             <label for=' mother name'>Mother_Name</label>
+        //                         </div>
+        //                     </div>
+        //                 </div>
+
+        //                 <input type='submit' onClick={checkResult} className="btn" Value="check result" />
+        //             </form>
+
+        //         </div>
+        //     </div>
+        // </div>
     )
 }

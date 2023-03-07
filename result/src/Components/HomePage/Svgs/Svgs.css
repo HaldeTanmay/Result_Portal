@@ -1,0 +1,24 @@
+.app_svgs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: -33;
+    margin-top: 5rem;
+}
+
+@media screen  and (max-width: 1024px){
+    .app_svgs>:nth-child(1){
+        opacity: 0.6;
+    }
+    /* .app_svgs>:nth-child(2){
+        z-index: 33;
+    } */
+    .app_svgs>:nth-child(3){
+        display: none;
+    }
+}
+@media screen  and (max-width: 768px){
+    .app_svgs>:nth-child(3){
+        display: none;
+    }
+}

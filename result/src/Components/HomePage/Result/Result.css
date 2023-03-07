@@ -1,0 +1,57 @@
+.app_result{
+    position: absolute;
+    top: 20%;
+    left: 33% ;
+    z-index: 33;
+}
+
+.app_brandName{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:  #1B1B1B;
+}
+ .app_brandName>h1{
+    font-size: 5rem;
+ }
+ .app_subHeading{
+    font-size: 1.2rem;
+    margin-top:-3rem;
+    margin-left: 18rem;
+ }
+ .app_subHeading>span{
+    color: #FF4500;
+ }
+ .app_button{
+    margin-top: 3rem;
+ }
+.app_button .app_resultBtn{
+    border: 0;
+    cursor: pointer;
+    padding: 1rem;
+    letter-spacing: 1px;
+    background-color: #FF4500;
+    border-radius: 1rem;
+    letter-spacing: 2px;
+    color: white;
+    transition: all 0.8s ease-in-out;
+}
+.app_button .app_resultBtn:hover{
+    transform: translateY(-4px);
+    background-color: #0066FF;
+    color: white;
+}
+
+.app_button>P{
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;  
+}
+
+@media screen and (max-width:768px) {
+    .app_result{
+        left: 17% ;
+    }
+}
+@media screen and (max-width:500px) {
+    .app_result{
+        left: 5% ;
+    }
+}

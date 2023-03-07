@@ -1,5 +1,5 @@
 import React from "react";
-import Home from './Components/Home';
+import {Home} from './Components/HomePage';
 import State from './Components/State';
 import Credentials from './Components/Credentials';
 import Result from './Components/Result';
@@ -18,6 +18,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+
 export default function App() {
   return (
     <>

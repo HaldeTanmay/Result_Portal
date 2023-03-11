@@ -59,12 +59,37 @@ router.get('/cr/:s_name/:un_name/:dp_name/:year/:sem', async (req, res) => {
         res.send(e);
     }
 });
+router.get('/cr/:s_name/:un_name/:dp_name/:sem/:year/1', async (req, res) => {
+
+    try {
+        const data = await UserModel.distinct('name', { 'state': req.params.s_name, 'un_name': req.params.un_name, 'dp_name': req.params.dp_name, 'sem': req.params.sem, 'year': req.params.year });
+        res.send(data);
+
+    } catch (e) {
+        res.send(e);
+    }
+});
+
 router.get('/cr/:s_name/:un_name/:dp_name/:exam_name/:year/:sem/:roll', async (req, res) => {
 
     try {
         const data = await UserModel.distinct('name', { 'state': req.params.s_name, 'un_name': req.params.un_name, 'dp_name': req.params.dp_name, 'exam_name': req.params.exam_name, 'year': req.params.year, 'roll': `${req.params.roll}.0`, 'sem': req.params.sem });
         res.send(data);
         // const data = await UserModel.find({ 'name': 'Ajay', 'state': 'Assam', 'un_name': 'a university', 'dp_name': 'IT', 'exam_name': 'UT-2', 'year': '2022-23', 'roll': '1.0' });
+        // res.send(data);
+
+    } catch (e) {
+        res.send(e);
+    }
+});
+router.get('/cr/:s_name/:un_name/:dp_name/:exam_name/:year/:sem/:name/dept/hel', async (req, res) => {
+
+    try {
+        const data = await UserModel.distinct('roll', { 'name': req.params.name, 'state': req.params.s_name, 'un_name': req.params.un_name, 'dp_name': req.params.dp_name, 'exam_name': req.params.exam_name, 'year': req.params.year });
+        res.send(data);
+        // const data = await UserModel.distinct('roll', { 'state': req.params.s_name, 'un_name': req.params.un_name, 'dp_name': req.params.dp_name, 'exam_name': req.params.exam_name, 'year': req.params.year, 'sem': req.params.sem,'name': req.params.name });
+        // res.send(data);
+        // const data = await UserModel.find({ 'name': 'Ajay', 'state': 'Assam', 'un_name': 'a university', 'dp_name': 'IT', 'exam_name': 'UT-2', 'year': '2022-23', 'name': 'Ajay' });
         // res.send(data);
 
     } catch (e) {

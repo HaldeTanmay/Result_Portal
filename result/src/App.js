@@ -13,17 +13,21 @@ import UnLabel from './Components/UnLabel';
 import DpLabel from './Components/DpLabel';
 import ShowResult from './Components/ShowResult';
 import ResultWindow from './Components/ResultWindow';
+import About from './Components/About';
 import {
   BrowserRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
+
 export default function App() {
   return (
     <>
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />}>
+          </Route>
+          <Route exact path="/about" element={<About />}>
           </Route>
           <Route exact path="/state" element={< State />}>
           </Route>

@@ -1,6 +1,8 @@
 import React from 'react'
-import '../Comp_css/Card.css'
 import { useNavigate } from 'react-router-dom';
+// import '../Comp_css/Card.css'
+import './Department.css'
+
 export default function ChoiceUn(props) {
     var dp_name = "";
     const navigate = useNavigate();
@@ -19,7 +21,7 @@ export default function ChoiceUn(props) {
     // }
     return (
         <div>
-            <button className='btn1' id={props.title} onClick={handleClick}>{props.title}</button>
+            <button className='Deparment_selector' id={props.title} onClick={handleClick}>{props.title}</button>
         </div>
 
     )

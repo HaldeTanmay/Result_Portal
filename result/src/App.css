@@ -4,7 +4,7 @@
 
 body {
     background-color: #e0e3e8;
-    font-family: "Rubik", sans-serif;
+    font-family: AllText, sans-serif;
 }
 
 a, a:hover, a:focus {
@@ -90,3 +90,4 @@ a, a:hover, a:focus {
 .rc-collapse.show{
     height: auto;
 }
+

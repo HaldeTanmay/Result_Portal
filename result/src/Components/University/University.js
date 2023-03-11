@@ -1,10 +1,11 @@
 import React from 'react'
-import '../Comp_css/Univer.css'
-// import Accordian from './Accordian';
+import { motion } from 'framer-motion'
+import { ThreeCircles} from 'react-loader-spinner'
+
+
 import ChoiceUn from './ChoiceUn';
-// import Card from './Card';
-// import { useCallback } from "react";
-// const axios = require('axios');
+import './Styles.css'
+
 
 class University extends React.Component {
     // Constructor
@@ -36,15 +37,25 @@ class University extends React.Component {
     render(props) {
 
         const { DataisLoaded, items, s_name } = this.state;
-        if (!DataisLoaded) return <div>
-            <h1> wait some time.... </h1> </div>;
+        if (!DataisLoaded) return (<div className='spinner'>
+            <ThreeCircles
+                height="100"
+                width="100"
+                radius={1}
+                color="#0066ff"
+                ariaLabel="puff-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+          /> </div>)
 
         return (
-            <div className='main'>
-                {/* <div id='s_label'>{title}</div> */}
-                <div className="container1">
-                    <div className="univ">
-                        <div className="uni" >
+                <motion.div 
+                   className="university_container"
+                   animate={{ y: [30,0],opacity:[0.6,1] }}
+                   transition={{ type: "spring", duration: 3 }}
+                >
+                    <div className="university_card">
                             {
                                 items.map((item) => (
                                     < ChoiceUn
@@ -53,25 +64,14 @@ class University extends React.Component {
                                     />
                                 ))
                             }
-                        </div >
                     </div>
 
-                </div>
+                </motion.div>
 
-            </div>
+        
 
         );
     }
 }
 
 export default University;
-
-// import React from 'react'
-// export const University = () => {
-//     return (
-//         <div>hello</div>
-//     );
-// }
-
-// import React from "react";
-// import './css/pr.css';

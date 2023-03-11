@@ -1,11 +1,12 @@
-import './Home.css';
-import Navbar from './Navbar/Navbar';
 import Svgs from './Svgs/Svgs';
+import NavigationMenu from './Hamburger/NavigationMenu';
+import './Home.css';
 
 function Home() {
   return (
     <div className="Home">
-      <Navbar/>
+      <NavigationMenu/>
+      {/* <Navbar/> */}
       <Svgs/>   
     </div>
   );

@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import '../Comp_css/Credential.css'
 import { useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
-import ChoiceSem from './ChoiceSem';
 import { Input, Card } from 'antd';
 import Lottie from 'react-lottie';
 import "antd/dist/antd";
+
 export default function Credentials(props) {
     const location = useLocation();
     const navigate = useNavigate();
@@ -160,90 +160,6 @@ export default function Credentials(props) {
 
         </div>
 
-        // <div className="cred">
-        //     <img className="wave" src="https://meiosis-studios.github.io/Animated-Login-Form/img/wave.png" />
-        //     {/* <img class="wave" src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/master/img/wave.png">  */}
-        //     <div className="container">
-        //         <div className="img">
-        //             {/* <img src="https://cbt.man1balam.sch.id/assets/img/draw2.svg"/>  */}
-
-        // <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_vq5wzcvx.json" background="transparent" speed={1} style={{ width: '400px', height: '400px' }} loop autoPlay />
-        //             {/* <img src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/master/img/bg.svg"/>   */}
-        //         </div>
-        //         <div className="login-content">
-        //             <form>
-        //                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsdDSqZB82DuxSIQ09tzqJyPaqLT7qCvQU0lSWcPX8Zv-Qo5c0cBbh87DUWI9VmZA5QC8&usqp=CAU" />
-        //                 {/* <img src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/master/img/avatar.svg"/>   */}
-        //                 <h2 className="title">Result Portal</h2>
-        //                 <div>
-        //                     <div className="input-div one">
-        //                         {/* <div className="i">
-        //                   <i className="fa-regular fa-calendar-days" />
-        //                 </div>  */}
-        //                         <div className="div">
-        //                             {/* <h5>name</h5>  */}
-
-        //                             <input type="text" name="" value={location.state.year} readOnly={true} />
-        //                             <label for='year'>year</label>
-
-        //                         </div>
-        //                     </div>
-        //                     <div className="input-div one">
-        //                         {/* <div className="i">
-        //                   <i className="fa-regular fa-calendar-days" />
-        //                 </div>  */}
-        //                         <div className="div">
-        //                             <select class="custom-select" onChange={HandleChangeOp}>
-
-        //                                 <option value="choose" disabled selected="selected">
-        //                                     -- Select Exam Name --
-        //                                 </option>
-        //                                 {items.map(({ label }) => (
-        //                                     <option value={label}>
-        //                                         {label}
-        //                                     </option>
-        //                                 ))}
-
-        //                             </select>
-        //                         </div> </div>
-        //                     <div className="input-div one">
-        //                         {/* <div className="i">
-        //                   <i className="fa-regular fa-calendar-days" />
-        //                 </div> */}
-        //                         <div className="div">
-        //                             <input type="text" autoComplete="off" value={roll} onChange={HandleChange} />
-        //                             <label for='Roll no.'>Roll</label>
-        //                         </div>
-        //                     </div>
-        //                     <div className="input-div one">
-        //                         {/* <div className="i"> 
-        //                   <i className="fa-regular fa-calendar-days" />
-        //                 </div> */}
-        //                         <div className="div">
-        //                             <input type="text" autoComplete="off" value={name} onChange={(e) => searchName(e.target.value)} />
-        //                             <label for='Name'>Name</label>
-        //                         </div>
-        //                     </div>
-        //                     {nameMatch && nameMatch.map((item, i) => (
-        //                         <div className="suggestion col-md-12 justify-content-md-center" onClick={() => onSuggestHandler(item.label)}>{item.label}</div>
-
-        //                     ))}
-        //                     <div className="input-div one">
-        //                         {/* <div className="i"> 
-        //                   <i className="fa-regular fa-calendar-days" />
-        //                 </div> */}
-        //                         <div className="div">
-        //                             <input type="text" autoComplete="off" value={mothers_name} onChange={(e) => setMothers_name(e.target.value)} />
-        //                             <label for=' mother name'>Mother_Name</label>
-        //                         </div>
-        //                     </div>
-        //                 </div>
-
-        //                 <input type='submit' onClick={checkResult} className="btn" Value="check result" />
-        //             </form>
-
-        //         </div>
-        //     </div>
-        // </div>
+      
     )
 }

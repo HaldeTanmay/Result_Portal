@@ -11,7 +11,7 @@ const Svgs = () => {
     <div className='app_svgs'>  
     {/* Dancing Book Svg */}
      <motion.div
-          animate={{ x: [200,-20] }}
+          animate={{ x: [200,0] }}
           transition={{ type: "spring", duration: 4 }}
           drag
           dragTransition={{
@@ -24,7 +24,7 @@ const Svgs = () => {
               autoplay
               loop
               src={DancingBook}
-              style={{ height: '500px', width: '600px' }}
+              className="dancing_book"
             >
             </Player>
       </motion.div>   
@@ -39,7 +39,8 @@ const Svgs = () => {
               autoplay
               loop
               src={Graduation}
-              style={{ height: '500px', width: '500px' }}
+              className="Grad_animation"
+              // style={{ height: '500px', width: '500px' }}
             >
             </Player>
        </motion.div>

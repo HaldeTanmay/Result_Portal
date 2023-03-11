@@ -1,7 +1,11 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+
 import Card from "./Card";
-import Data from "./Data";
-import '../Comp_css/Card.css'
+import Data from "../Data";
+import '../Common.css'
+import State_name from "./State_name";
+
 export default function State() {
     const dataComp = Data.map((data) => {
         return (
@@ -12,15 +16,8 @@ export default function State() {
         )
     })
     return (
-        <div className="main">
-            <b id='label'>Select Your State:</b>
-            <div className="container1">
-                <div className="state">
-                    {dataComp}
-                </div>
-            </div>
-
+        <div  className='state_container' >
+                <State_name/>
         </div>
     );
 }
-

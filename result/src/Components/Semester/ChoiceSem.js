@@ -1,6 +1,8 @@
 import React from 'react'
-import '../Comp_css/Card.css'
 import { useNavigate } from 'react-router-dom';
+
+import './semester.css'
+
 export default function ChoiceUn(props) {
     var sem = "";
     const navigate = useNavigate();
@@ -14,7 +16,7 @@ export default function ChoiceUn(props) {
     };
     return (
         <div>
-            <button className='btn1' id={props.title} onClick={handleClick}>{props.title}</button>
+            <button className='semester_selector' id={props.title} onClick={handleClick}>{props.title}</button>
         </div>
 
     )

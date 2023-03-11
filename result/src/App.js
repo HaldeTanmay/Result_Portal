@@ -1,16 +1,16 @@
 import React from "react";
 import {Home} from './Components/HomePage';
-import State from './Components/State';
+import {State} from './Components/state';
 import Credentials from './Components/Credentials';
 import Result from './Components/Result';
-import University from './Components/University';
+import { University, Label} from './Components/University';
 import Year from './Components/Year';
 import Ad from './Components/Ad';
 import Ad2 from './Components/Ad2';
-import Label from './Components/Label';
+// import Label from './Components/Label';
 import Accordian from './Components/Accordian';
-import UnLabel from './Components/UnLabel';
-import DpLabel from './Components/DpLabel';
+import {UnLabel} from './Components/Department';
+import {DpLabel} from './Components/Semester';
 import ShowResult from './Components/ShowResult';
 import ResultWindow from './Components/ResultWindow';
 import {

@@ -1,0 +1,70 @@
+.state_container
+{
+    font-family: AllText;
+    text-align: -webkit-center;
+    background: url('../assets/background2.svg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    height: 100vh;
+    width: 100vw;
+}
+
+.state_label{
+    font-size: 2rem;
+    font-family: AllText;
+    padding: 2px;
+    width: 40%;
+    color:white;
+    border-bottom-left-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    background:linear-gradient(90deg,#ff40e2 0%, #63dcff 100%);
+}
+
+.state_name_container{
+    height: fit-content;
+    width: 65%;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 12px;
+    margin-top: 1rem;
+    backdrop-filter: blur(5px);
+}
+.state_scroll{
+ padding-top: 2rem;
+ padding-bottom: 1.8rem;
+ overflow-y: scroll;
+ height: 80vh;     
+}
+
+@media screen and (max-width:1024px){
+     .state_label{
+        font-size: 1.5rem;
+        padding: 10px;
+        width: 50%;
+        border-bottom-left-radius: 4rem;
+        border-bottom-right-radius: 4rem; 
+    }
+    .state_name_container{
+        width: 80%;
+        margin-top: 1.2rem;
+    }
+}
+@media screen and (max-width:850px){
+    .state_container{
+        background: url('../assets/backgroundTab2.svg'); 
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    
+}
+    @media screen and (max-width:500px){
+        .state_label{
+            font-size: 1rem;
+            width: 50%;
+            border-bottom-left-radius: 4rem;
+            border-bottom-right-radius: 4rem;
+            
+        }
+}

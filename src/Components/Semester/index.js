@@ -1,0 +1,1 @@
+export { default as DpLabel } from './DpLabel'

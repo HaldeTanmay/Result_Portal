@@ -1,0 +1,122 @@
+.app_result{
+    position: absolute;
+    top: 25%;
+    left: 33% ;
+    z-index: 33;
+}
+
+.app_brandName{
+    font-family: Brand,sans-serif;
+    color:  #1B1B1B;
+}
+ .app_brandName>h1{
+    font-size: 5rem;
+ }
+ .app_subHeading{
+    font-size: 1.2rem;
+    /* margin-top:-3rem; */
+    margin-left: 10rem;
+    font-family: AllText,sans-serif;
+ }
+ .app_subHeading>span{
+     background: -webkit-linear-gradient(90deg,#ff40e2 0%, #63dcff 100%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     animation: gradiantcolors 2s ease-in-out infinite alternate;
+ }
+
+
+@keyframes gradiantcolors {
+    0%{
+        background: -webkit-linear-gradient(0deg,#ff40e2 0%, #63dcff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    100%{
+        background: -webkit-linear-gradient(90deg,#ff40e2 0%, #63dcff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+}
+
+ .app_button{
+    margin-top: 3rem;
+    font-family: AllText,sans-serif;
+ }
+.app_button .app_resultBtn{
+    position: relative;
+    background: #fff;
+    width: 50%;
+    height: 3rem;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgb(191 191 191 / 50%);
+    z-index: 1;
+    transition: all 100ms ease-in-out;
+    color: #0066ff;
+    margin-top: 2rem;
+}
+.app_button .app_resultBtn::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+    background-color: #0066ff;
+    transform: scaleX(0);
+    transform-origin: right;
+    border-radius: 5px;
+    transition: transform 100ms ease-in-out;
+}
+
+
+.app_button .app_resultBtn:hover,
+.app_button .app_resultBtn:focus{
+    transform: translateY(-4px);
+    background-color: #0066FF;
+    color: white;
+}
+.app_button .app_resultBtn:hover::before,
+.app_button .app_resultBtn:focus::before{
+    transform: scaleX(1);
+}
+
+.app_button>p{
+    font-family: AllText,sans-serif;
+    letter-spacing: 1px;  
+    color: grey;
+}
+
+@media screen and (max-width:768px) {
+    .app_brandName>h1{
+        font-size: 4rem;
+     }
+    .app_result{
+        left: 17% ;
+    }
+}
+@media screen and (max-width:580px) {
+    
+    .app_result{
+        left: 10% ;
+    }
+}
+@media screen and (max-width:500px) {
+    
+    .app_result{
+        font-size: 4rem;
+        left: 6% ;
+    }
+    .app_subHeading{
+        font-size: 1rem;
+        margin-left: 15rem;
+     }
+     .app_button>P{
+        font-size: 1rem;
+    }
+}

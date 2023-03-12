@@ -5,32 +5,11 @@
 
     padding-top:  2rem;
     padding-left: 2rem;
-    /* background: rgba(255,255,255,0.25); */
-    /* backdrop-filter: blur(4px); */
-    /* --webkit-backdrop-filter: blur(4px); */
     position: fixed;
-    z-index: 2;
+    z-index: 1000;
 }
 
-/* .app__navbar-links{
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;} */
-/* .app__navbar-links li{
-    margin :0 1rem;
-    color: #1b1b1b;
-    cursor: pointer;
-    flex-direction: column;
-} */
-/* .app__navbar-links li {
-    height: 5px;
-    width: 5px;
-    background: transparent;
-    border-radius: 50%;
-    margin-bottom: 5px;
-} */
+
 .app__navbar-links ul li a{
     color: black;
     text-decoration: none;
@@ -64,8 +43,8 @@
 }
 
 .app_cross svg{
-    width: 10%;
-    height: 10%;
+    width: 20%;
+    height: 20%;
     color: black;
     cursor: pointer;
 }
@@ -73,23 +52,23 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    right: 0;
+    left: 0;
     z-index: 5;
     padding: 1rem;
-    width: 30%;
+    width: 15%;
     height: 100vh;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
     background-color: #fff;
-    /* backdrop-filter: blur(5px); */
     box-shadow: 0px 0px 10px 0px rgb(191 191 191 / 50%);
 }
 .app__navbar-menu div ul{
     list-style: none;
-    margin: 0;
-    padding: 0;
+    /* margin: 0; */
+    
+    padding: 1rem;
     height: 100%;
     width: 100%;
     
@@ -100,8 +79,22 @@
 }
 
 .app__navbar-menu div ul li{
-    margin: 1rem;
+    margin-left: 2rem;
+    padding: 1rem;
 }
+.app__navbar-menu div ul li a{
+    color: #1b1b1b;
+   text-decoration: none;
+   transition: all 1s ease-in-out;
+}
+.app__navbar-menu div ul li a:focus,
+.app__navbar-menu div ul li a:hover{
+    color: #0066ff;
+}
+
+
+
+
 @media screen and (max-width:2000px){
     .app__navbar-links li{
                 display: none;
@@ -114,6 +107,10 @@
     .app__navbar{
         width: 20%;
     }
+    .app__navbar-menu div{
+        width: 20%;
+    }
+
 }
 @media screen and (max-width: 768px) {
     .app__navbar{
@@ -127,16 +124,22 @@
     .app__navbar{
         width: 30%;
     }
+    .app__navbar-menu div ul li{
+        margin-left: 1rem;
+        padding: 10px;
+    }
 }
 @media screen and (max-width: 500px) {
     .app__navbar{
         width: 30%;
-        z-index: 33;
+        z-index: 1000;
+    }
+    .app__navbar-menu div{
+        width: 30%;
     }
 }
 @media screen and (max-width: 450px) {
     .app__navbar{
         width: 30%;
-        z-index: 33;
     }
 }

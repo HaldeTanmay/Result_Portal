@@ -8,7 +8,8 @@ import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import { BsTwitter, BsPinterest, BsWhatsapp } from "react-icons/bs";
 import playStore from "../assets/footer/playStore.png";
 import amezon from "../assets/footer/amezon.png";
-  
+// ssss
+
 const Enquiry = () => {
   const [links, setLinks] = useState([]);
   const [moreFromUs, setMoreFormUs] = useState([]);

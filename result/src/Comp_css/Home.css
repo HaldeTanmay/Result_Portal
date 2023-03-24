@@ -1,0 +1,88 @@
+
+
+.jumbotron jumbotron-fluid{
+    text-align: center;
+   align-items: center;
+   justify-content: center; 
+   margin-top: 0%;
+   margin-bottom: 0%;
+ } 
+.Home {
+  overflow: hidden;
+}
+ @font-face {
+  font-family: 'Samarkan Normal';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Samarkan Normal'), url('SAMARN__.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Samarkan Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Samarkan Oblique'), url('SAMARO__.woff') format('woff');
+  }
+
+ .container h1, p {
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+   margin-left: auto;
+ }
+ .display-4{
+  font-size: 5rem;
+  font-family: 'Samarkan Oblique';
+ }
+ 
+ .container{
+   margin-top: none;
+   font-size: 25px;
+   margin-bottom: 0%;
+ }
+
+ 
+
+ .btn{
+    background-color: #cecece;
+    width: 8rem;
+    height: 7vh;
+    border-radius: 16px;
+    font-family: initial;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: linear-gradient(to left, #007fff 50%, #cecece 50%);
+    background-size: 200% 100%;
+    background-position: left bottom;
+    transition: all .1s ease-out;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-position: right bottom;
+    color: white;
+  }
+
+  .block{
+    background-color: rgb(218, 224, 231);
+    color: black;
+    margin: 0%;
+    font-size: medium;
+    font-family: sans-serif;
+    
+  }
+  #navbarSupportedContent{
+    margin-left: 10%;
+    color: white;
+    
+  
+  }
+
+  #imm{
+    width: 100vw;
+    height: 46vh;
+}
+  

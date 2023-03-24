@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Freehand&family=Poppins:wght@400;500;600;700&family=Ubuntu&display=swap');
+
+.app_result {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  z-index: 33;
+}
+
+.app_brandName h1 {
+  text-decoration: none;
+  font-family: Brand, sans-serif;
+  /* color:  #1B1B1B; */
+  color: white;
+  /* -webkit-text-stroke: 0.0001vw #329d52; */
+  -webkit-text-stroke: 0.0001vw #dcdcdc;
+  position: relative;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.app_brandName h1::before {
+  content: "Parinaam";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* color: #329d52; */
+  /* color: #3A1078; */
+  background: -webkit-linear-gradient(
+    45deg,
+    #0c0050,
+    #0258c9,
+    #21a6e4,
+    #68f3fd
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0vw #dcdcdc;
+  overflow: hidden;
+  animation: animate1 1.5s linear;
+}
+
+@keyframes animate1 {
+  0% {
+    border-right: 2px solid #329d52;
+    width: 0%;
+  }
+  99% {
+    border-right: 2px solid #329d52;
+  }
+  100% {
+    width: 100%;
+    border: none;
+  }
+}
+
+.app_brandName > h1 {
+  font-size: 5rem;
+}
+.app_subHeading {
+  text-transform: lowercase;
+  font-family: "Freehand", cursive !important;
+  font-size: 1.2rem;
+  /* margin-top:-3rem; */
+  margin-left: 10rem;
+  font-family: AllText, sans-serif;
+}
+.app_subHeading .app_rollingNotes {
+  font-family: AllText, sans-serif;
+  text-transform: capitalize;
+}
+.app_subHeading > span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  background: -webkit-linear-gradient(90deg, #ff40e2 0%, #63dcff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradiantcolors 2s ease-in-out infinite alternate;
+  text-transform: capitalize;
+}
+
+@keyframes gradiantcolors {
+  0% {
+    background: -webkit-linear-gradient(0deg, #ff40e2 0%, #63dcff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  100% {
+    background: -webkit-linear-gradient(90deg, #ff40e2 0%, #63dcff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.app_button {
+  margin-top: 3rem;
+  font-family: AllText, sans-serif;
+}
+.app_button .app_resultBtn {
+  position: relative;
+  background: #fff;
+  width: 50%;
+  height: 3rem;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgb(191 191 191 / 50%);
+  z-index: 1;
+  transition: all 100ms ease-in-out;
+  color: #0066ff;
+  margin-top: 2rem;
+}
+.app_button .app_resultBtn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: -1;
+  background-color: #0066ff;
+  transform: scaleX(0);
+  transform-origin: right;
+  border-radius: 5px;
+  transition: transform 100ms ease-in-out;
+}
+
+.app_button .app_resultBtn:hover,
+.app_button .app_resultBtn:focus {
+  transform: translateY(-4px);
+  background-color: #0066ff;
+  color: white;
+}
+.app_button .app_resultBtn:hover::before,
+.app_button .app_resultBtn:focus::before {
+  transform: scaleX(1);
+}
+
+.app_button > p {
+  font-family: AllText, sans-serif;
+  letter-spacing: 1px;
+  color: grey;
+}
+
+@media screen and (max-width: 768px) {
+  .app_brandName > h1 {
+    font-size: 4rem;
+  }
+  .app_result {
+    left: 30%;
+  }
+}
+@media screen and (max-width: 580px) {
+  .app_result {
+    left: 22%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .app_result {
+    font-size: 4rem;
+    left: 6%;
+  }
+  .app_subHeading {
+    font-size: 1rem;
+    margin-left: 15rem;
+  }
+  .app_button > P {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 430px) {
+  .app_subHeading {
+    margin-left: 13rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .app_subHeading {
+    margin-left: 10rem;
+  }
+}

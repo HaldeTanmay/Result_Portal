@@ -1,0 +1,246 @@
+
+.navbar {
+    padding: 15px 50px;
+    background-color: #f7f7f7;
+  }
+  .about_us {
+    /* background-color: rgb(228, 247, 247); */
+    background-color: #f7f7f7;
+  }
+  .about_heading_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    padding: 0 40px;
+  }
+  .about_section_heading {
+    padding: 70px 0 0 70px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    /* background-color: black; */
+  }
+  .about_section_heading h1 {
+    color: rgb(0, 78, 97);
+    margin: 0.5rem 0 1.5rem 0;
+    padding-left: 20px;
+    font-weight: 900;
+  }
+  .about_section_heading p {
+    padding-left: 20px;
+    font-size: 15px;
+  }
+  .about_section_heading_image {
+    height: 50px;
+  }
+  .about_section_image_container {
+    flex: 1;
+    /* background-color: red; */
+    height: 70vh;
+  }
+  .about_section_image {
+    height: 500px;
+  }
+  
+  
+  .our_story_section {
+    margin: 100px;
+  }
+  
+  .our_story_section_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .our_story_section_container h1 {
+    padding: 20px 0 0 0;
+    font-size: 300%;
+    color: rgb(0, 78, 97);
+  }
+  .our_story_section_container p {
+    padding: 0 70px;
+    
+  }
+  
+  
+  .about_us_our_team {
+    background: url("../Images/Abract01.jpeg");
+      background-repeat: no-repeat;
+      background-position: right;
+      height: 100vh;
+      width: 100%;
+      background-size: 65%;
+  }
+  
+  
+  
+  .about_us_card_container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 30px 50px 50px;
+  }
+  
+  .about_us_card {
+    margin: 20px 20px 20px 20px;
+    box-shadow: 0 0 10px 0 #c0c0c0;
+    background-color: aliceblue;
+    padding: 30px;
+    padding-top: 20px;
+    max-width: 20rem;
+  }
+  .about_us_card p{
+    text-align: left;
+  }
+  .about_us_card_heading {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    
+  }
+  .about_us_card_heading img{
+    height: 40px;
+    width: 40px;
+  }
+  /* .about_us_card button {
+    width: 100%;
+    padding: 12px 0;
+   font-size: 16px;
+   background-color: rgb(0, 132, 255);
+   border: none;
+   border-radius: 3px;
+   color: #fff;
+   font-weight: 500;
+   transition: ease-in-out 200ms all;
+  }
+  
+  .about_us_card button:hover {
+   background-color: rgb(33, 103, 184);
+  } */
+  .about_us_card button {
+    background-color: #ffffff;
+    color: #006eff;
+    padding: 9px;
+    /* border: 1px solid #006eff; */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 2px;
+    font-size: 19px;
+    font-weight: 900;
+    z-index: 1;
+    width: 100%;
+    box-shadow: 0 0 5px 0px #c0c0c0;
+  }
+  .about_us_card button::before {
+    border-radius: 2px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #0799fa;
+    transition: transform 100ms ease-out;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  .about_us_card button:hover::before,
+  .about_us_card button:focus::before {
+    transform: scaleX(1);
+  }
+  .about_us_card button:hover {
+    color: #fff;
+    transform: 1s;
+  }
+  
+  .about_us_card_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  @media only screen and (max-width: 1800px) {
+    .about_section_heading {
+      padding: 0px 0 0 70px;
+    }
+  }
+  @media only screen and (max-width: 1350px) {
+    
+  }
+  @media only screen and (max-width: 1200px) {
+    .about_section_heading h1{
+      font-size: 30px;
+    }
+    .about_heading_container {
+      padding: 0 20px;
+    }
+    .about_us_our_team {
+        background-size: 75%;
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    .about_heading_container {
+      padding: 0 0px;
+    }
+    .about_section_image_container {
+      display: none;
+    }
+    .about_heading_container {
+      padding: 0 30px 0 0px;
+      height: 50vh;
+      
+    }
+    .our_story_section {
+      margin: 70px 30px 120px 30px;
+    }
+    .about_us_our_team {
+      height: auto;
+        background-size: 95%;
+    }
+    
+  }
+  @media only screen and (max-width: 900px) {
+    .our_story_section_container p {
+      padding: 0 20px;
+      
+    }
+    
+  }
+  @media only screen and (max-width: 750px) {
+    .about_us_our_team {
+        background-size: 95%;
+    }
+    
+  
+  }
+  @media only screen and (max-width: 550px) {
+    .about_section_heading {
+      padding-left: 30px;
+    }
+    .about_us_card_container {
+      padding: 20px 0 0 0;
+    }
+  
+  }
+  @media only screen and (max-width: 400px) {
+    .about_section_heading {
+      padding-left: 20px;
+    }
+  
+  }
+  
+  
+  
+  
+  
+  
+  /* .footer {
+    height: 50vh;
+  } */

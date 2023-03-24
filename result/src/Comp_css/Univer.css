@@ -1,0 +1,52 @@
+.Uni {
+	text-align: center;
+	color: Green;
+}
+.Uni-header {
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+}
+.Uni-link {
+	color: #61dafb;
+}
+
+@keyframes Uni-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* #s_label{
+	font-size: 3rem;
+    font-family: sans-serif;
+	width: 40%;
+	margin-bottom: 2rem;
+	background-color: red;
+} */
+
+.university_container{
+    /* height: fit-content; */
+    width: 65vw;
+    box-shadow: grey -3px 4px 21px -2px;
+    border-radius: 12px;
+    margin-top: 1.2vh;
+    animation: moveToRight 1s ease;
+}
+
+/* @keyframes moveToRight {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-200px);
+    }
+} */

@@ -1,0 +1,139 @@
+.Ad_conatiner {
+  text-align: -webkit-center;
+  background: url("../assets/background2.svg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Ad_card {
+  height: auto;
+  width: auto;
+  /* box-shadow: grey -3px 4px 21px -2px; */
+  border-radius: 12px;
+  /* backdrop-filter: blur(5px); */
+  
+}
+
+
+
+.img_container img {
+  background-attachment: fixed;
+  background-size: cover;
+  border-radius: 7px;
+  /* height: 495px;
+  width: 905px; */
+  height: 58vh;
+  width: 58vw;
+}
+
+.Ad_timer {
+  height: 3rem;
+  width: 3rem;
+  background-color: #fff;
+  color: #0066ff;
+  border-radius: 3rem;
+  /* margin: 0 70px 0 0; */
+  border: 1px solid #0066ff;
+  font-size: 2rem;
+
+}
+.Ad_Skip_button {
+  position: relative;
+  background: #fff;
+  /* width: 50%; */
+  height: 3rem;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgb(191 191 191 / 50%);
+  z-index: 1;
+  transition: all 100ms ease-in-out;
+  color: #0066ff;
+  /* margin-top: 2rem; */
+  padding: 10px 50px;
+  font-weight: 900;
+}
+.Ad_Skip_button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: -1;
+  background-color: #0066ff;
+  transform: scaleX(0);
+  transform-origin: right;
+  border-radius: 5px;
+  transition: transform 100ms ease-in-out;
+}
+
+.Ad_Skip_button:hover,
+.Ad_Skip_button:focus {
+  /* transform: translateY(-4px); */
+  background-color: #0066ff;
+  color: white;
+}
+.Ad_Skip_button:hover::before,
+.Ad_Skip_button:focus::before {
+  transform: scaleX(1);
+}
+
+.Ad_timer_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+  /* background-color: #000; */
+}
+
+/* buttons  */
+
+.auto_skip{
+  color: #0066ff;
+  font-weight: bolder;
+  font-size: 16px;
+}
+.auto_skip_space {
+  height: 20px
+}
+
+@media screen and (max-width: 900px) {
+  .img_container img {
+    width: 90vw;
+  }
+  
+}
+@media screen and (max-width: 1300px) {
+  .img_container img {
+    width: 80vw;
+  }
+  
+}
+
+@media screen and (max-width: 850px) {
+  .Ad_conatiner {
+    background: url("../assets/backgroundTab2.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+ 
+  .button_container {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 600px) {
+  .img_container img {
+    width: 90vw;
+  }
+  
+}

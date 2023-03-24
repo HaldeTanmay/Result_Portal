@@ -1,0 +1,348 @@
+.footer_main{
+    border-top-left-radius: 125px;
+    bottom: 0;
+    padding: 0 11vw;
+    padding-top: 70px;
+    /* background: linear-gradient(to right , #000428,#004e92);
+    background: linear-gradient(to right , #1e3c72,#2a5298);
+    background: linear-gradient(to right , #0f0c29, #302b63,#24243e); */
+    background: linear-gradient(to left, #0066ff,#004e92);
+}
+
+.foot_cont{
+    /* max-width: 1170px; */
+    /* background: linear-gradient(to right , #00093c, #2d0b00); */
+    margin: auto;
+    
+    /* height: 100vh; */
+
+}
+
+#logoContainer{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    align-items: flex-end;
+}
+
+/* #logoContainer div{
+    text-align: center;
+} */
+
+#logoContainer img{
+    width: 3vw;
+}
+
+.top{
+    display: flex;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10vh;
+    justify-content: space-evenly;
+} 
+
+/* #row2{
+    gap: 1vw;
+} */
+
+ul{
+    list-style: none;
+
+}
+i{
+    color: #e91e63;
+}
+#logoContainer{
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+#logo{
+    font-size: 2.7rem;
+}
+
+.footer-col{
+    width: 25%;
+    /* padding: 0 15px; */
+}
+
+.footer_main .ul_hover_effect li a:hover{
+    transform: scale(1.05);
+    /* color: rgb(255 253 253 / 44%); */
+    transform: color 0s;
+    color: white;
+
+}
+
+.footer-col h3{
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #bebebe;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-family:'Circular';
+    position: relative;
+    width: fit-content;
+    
+
+}
+.footer-col .border li a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    border-bottom: 2px solid #e91e63;
+    box-sizing: border-box;
+    width: 0;
+    transition: all .5s ease;
+}
+
+.footer-col .border li a:hover:before{
+    width: 100%;
+}
+
+.footer-col .border li a:hover{
+    color: white;
+    transform: scaley(1.2);
+}
+.footer-col ul li{
+    margin-bottom: 10px;
+    position: relative;
+    width: fit-content;
+}
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: rgba(255,255,255,.32);
+    text-decoration: none;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    gap: 1vw;
+    
+    /* font-family:'Circular'; */
+}
+
+.footer-col ul li a .logo{
+    color: #17acdd;
+}
+/* .footer-col ul li a:hover{
+color: #fff;
+padding-left:8px;
+}  */
+.footer-col ul li input{
+    border: none;
+  border-bottom: 2px solid gray;
+  background-color: unset;
+  outline: none;
+  font-family: poppins;
+  font-size: 1em;
+  color:#fff;
+width: 80%;
+padding: 5px;
+
+   
+}
+.footer-col  ul li textarea{
+    padding: 5px;
+    width: 80%;
+    box-shadow: 0 0 5px 0 rgb(150, 150, 150);
+    background-color: unset;
+    border-style: none;
+    font-family: poppins;
+    font-size: 1em;
+    color:#fff;
+}
+#foot-btn{
+    background-color: #17acdd;
+    color: #c2c6cc;
+    padding: 9px;
+    /* border: 1px solid #006eff; */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 2px;
+    font-size: 19px;
+    font-weight: 300;
+    z-index: 1;
+    width: 50%;
+
+}
+#foot-btn::before{
+    border-radius: 2px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #e91e63;
+    transition: transform 100ms ease-out;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+/* #foot-btn:hover::before,
+#foot-btn:focus::before {
+  transform: scaleX(1);
+}
+#foot-btn:hover {
+  color: #fff;
+  transform: 1s;
+} */
+.footer-col #icon{
+    font-size: 2rem;
+    padding: 15px;
+    color: #fff;
+
+}
+@font-face {
+    font-family: 'Samarkan Oblique';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Samarkan Oblique'), url('SAMAN___.TTF') format('woff');
+    }
+#logo{
+    font-family: 'Samarkan Oblique';
+}
+
+.footer-col .download_options{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#appList{
+    display: flex; 
+    flex-direction: column;
+}
+
+.footer-col .download_options img{
+    width: 50%;
+    /* height: 50%;
+    aspect-ratio: 3/2;
+    object-fit: contain; */
+}
+
+.bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 2vh;
+}
+
+.bottom p{
+    color: rgba(255,255,255,.32);
+    font-size: 13px;
+}
+
+.bottom .socialMediaLogos{
+    display: flex;
+    gap: 1vw;
+    color: rgba(255,255,255,.45);
+    
+}
+
+@keyframes pop_up {
+    0%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.bottom .socialMediaLogos svg:hover{
+    transform: scale(1);
+    animation: pop_up 1s ;
+    color: white;
+    transition: transform .5s ease-in-out;
+}
+
+
+@media screen and (max-width: 844px) {
+    .footer-col .download_options img {
+        width: 100%;
+    }
+
+    .footer-col h3 {
+        font-size: .7rem;
+    }
+
+    .footer-col ul li a {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .bottom p {
+        font-size: 11px;
+    }
+
+    #logoContainer img {
+        width: 5vw;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .top {
+        flex-direction: column;
+    }
+
+    .footer-col{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+    }
+
+    .row {
+        flex-wrap: nowrap;
+    }
+
+    .subRow2{
+        flex: 1;
+        align-items:flex-start;
+        justify-content: start;
+    }
+
+    .footer-col .download_options img {
+        width: 69%;
+    }
+    .bottom .socialMediaLogos {
+        justify-content: space-around;
+        width: 100%;
+        padding-top: 2vh;
+    }
+
+    .section1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ul_hover_effect{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .row{
+        margin-bottom: 5vh
+    }
+
+    #logoContainer img {
+        width: 8vw;
+    }
+}

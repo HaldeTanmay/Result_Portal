@@ -1,0 +1,449 @@
+.yearContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center ;
+  height: 100%;
+  overflow-y: hidden;
+  font-family: cirle;
+}
+
+.label {
+    font-size: 3rem;
+    /* color: #a7a1a1; */
+    background: -webkit-linear-gradient(45deg,#a8c0ff, #3f2b96);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    margin-bottom: 4vh;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+  }
+ 
+  .heading {
+    font-size: 2rem;
+    font-family: circular;
+    src: url('CircularStd-Light.otf');
+    width: 40%;
+    padding: 4px;
+    color: white;
+    border-bottom-left-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    background: linear-gradient(
+      -45deg,
+      rgb(64, 93, 230),
+      rgb(88, 81, 219),
+      rgb(131, 58, 180),
+      rgb(193, 53, 132),
+      rgb(225, 48, 108),
+      rgb(253, 29, 29),
+      rgb(245, 96, 64),
+      rgb(247, 119, 55),
+      rgb(252, 175, 69),
+      rgb(255, 205, 75),
+      rgb(197, 255, 56),
+      rgb(81, 255, 0)
+    );
+    margin-bottom: 2rem;
+    position: relative;
+    background-size: 400% 400%;
+    animation: move_back 5s ease-in-out infinite;
+  }
+  
+  @keyframes move_back {
+    0% {
+      background-position: 0 50%;
+    }
+  
+    50% {
+      background-position: 100% 50%;
+    }
+  
+    100% {
+      background-position: 0 50%;
+    }
+  }
+  
+  @media screen and (max-width:1024px) {
+    .heading {
+      font-size: 1.5rem;
+      width: 80%;
+      border-bottom-left-radius: 4rem;
+      border-bottom-right-radius: 4rem;
+    }
+  }
+  
+  @media screen and (max-width:500px) {
+    .heading {
+      font-size: 1.3rem;
+      width: 80%;
+      border-bottom-left-radius: 4rem;
+      border-bottom-right-radius: 4rem;
+    }
+  }
+  .year_main {
+    text-align: -webkit-center;
+    background: url("../assets/background2.svg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+  
+  }
+  
+@media screen and (max-width: 850px) {
+  .year_main {
+    background: url("../assets/backgroundTab2.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+@media screen and (max-width: 768px) {
+  .Ad_card {
+    width: 100%;
+  }
+  .label{
+    font-size: 1.5rem;
+  }
+  .latest #but_year{
+    font-size: 15px;
+    font-weight: 300px;
+    height: 5rem;
+    
+  }
+  .older #but_old{
+    height: 4rem;
+    font-size: 13px;
+    text-align: -webkit-center;
+    
+  }
+  .oldest {
+    font-size: 10px;
+    font-weight: 100px;
+    height: 2rem;
+    
+  }
+ 
+
+
+
+}
+  
+  
+  
+  
+  .year_card{
+    height: 77vh;
+    width: 70vw;
+    box-shadow: grey -3px 4px 21px -2px;
+    border-radius: 12px;
+   
+    backdrop-filter: blur(5px);
+    position: absolute;
+   left: 16%;
+   top: 14%;
+
+ 
+  transform: translate(-30%, -30%);
+   
+  
+  }
+  .bottom{
+    width: 100%;
+    height: 20%;
+    margin-top: 0%;
+
+
+  }
+  
+  .oldest {
+   width: 100%;
+    height: auto;
+    /* align-items: center;
+    justify-content: center;
+    text-align: -webkit-center; */
+  
+  
+  }
+  
+  .latest {
+    width: 100%;
+/*    
+    align-items: center;
+    justify-content: center;
+    text-align: -webkit-center;
+    margin-top: 7%; */
+  
+  }
+    .card{
+    display: flex;
+    flex-direction: column;
+    min-width: 10vw;
+  
+} 
+.card span:first-child{
+    margin-bottom: 5px;
+}
+
+
+   
+  #but_year {
+   display: flex;
+    background-color: #fff;
+       flex-direction: column;
+    color: #006eff;
+    padding: 13px 45px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px 0px rgb(165, 165, 165);
+    font-size: 19px;
+    font-weight: 900;
+    z-index: 1;
+  font-family: cirle;
+
+   
+  }
+  
+  #but_year::before {
+    border-radius: 7px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #0799fa;
+    transition: transform 100ms ease-out;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  
+  #but_year:hover::before,
+  .print_button:focus::before {
+    transform: scaleX(1);
+  }
+  
+  #but_year:hover {
+    color: #fff;
+    transform: 1s;
+  } 
+  
+  #but_old {
+    background-color: #857d7d;
+    color: #edf0f3;
+    padding: 13px 45px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px 0px rgb(165, 165, 165);
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 1;
+    margin-top: 2rem;
+  font-family: cirle;
+
+  }
+  
+  /* #but_old::before {
+    border-radius: 7px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #0799fa;
+    transition: transform 100ms ease-out;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  
+  #but_old:hover::before,
+  .print_button:focus::before {
+    transform: scaleX(1);
+  }
+  
+  #but_old:hover {
+    color: #fff;
+    transform: 1s;
+  }
+   */
+  
+   .oldest .card {
+    display: flex;
+    background-color: #fff;
+    color: #006eff;
+    display: inline-flex;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 0px rgb(165, 165, 165);
+    font-size: 10px;
+    font-weight: 500;
+    z-index: 1;
+    margin: 0.4rem 0.4rem 0.4rem 0.4rem;
+
+    font-family: cirle;
+
+   
+  } 
+
+  @media screen and (max-width: 1024px) {
+    .oldest{
+      font-size: 1.5rem;
+      padding: 10px;
+    
+     
+    }
+   
+  }
+  
+  @media screen and (max-width: 900px) {
+    .oldest{
+      font-size: 1rem;
+      padding: 5px;
+    
+      margin: 0.2rem 0.2rem 0.8rem 0.2rem;
+   
+
+    }
+   
+   
+  }
+  
+  .oldest .card::before {
+    border-radius: 7px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #0799fa;
+    transition: transform 100ms ease-out;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  
+  .oldest .card:hover::before {
+    transform: scaleX(1);
+  }
+  
+.oldest .card:hover {
+    color: #fff;
+    transform: 1s;
+  } 
+
+
+
+
+/* .latestResult */
+
+.resultBtn button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.oldest{
+  display: flex;
+  width: 60%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.oldest .card{
+  margin-top: 3%;
+  /* min-width: ; */
+  width: auto;
+  transition: all .1s ease-in-out;
+}
+
+.oldest .card:hover{
+  transform: scale(1.1);
+}
+
+.oldest .card span{
+  font-size: .8rem;
+  font-weight: 500;
+  /* padding: 1%; */
+  text-transform: uppercase;  
+  transition: all .1s ease-in-out;
+}
+
+.oldest .card span:last-child{
+  font-size: .7rem;
+}
+.oldest .card:hover span{
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.latest .card span{
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.latest .card span:last-child{
+  font-size: 1rem;
+}
+
+.older button{
+  border-radius: 8px;
+    margin: 10px;
+    padding: 1em 3em;
+    background-size: 200% 200%;
+    color: white;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08); 
+    background-image: linear-gradient(to right, #5c61f2 0%, #abc8ff 50%, #775cf2 100%);
+    transition: 0.5s;
+}
+
+
+.older button:hover{
+  background-position: right center;
+}
+ 
+
+@media screen and (max-width:400px) {
+  .oldest{
+    width: auto;
+  }
+
+  .oldest .card{
+    margin: 0;
+    margin-bottom: 10px;
+    width: 30%;
+  }
+
+  .card .span{
+    font-size: .5rem;
+  }
+
+  .older #but_old{
+    height: auto;
+  }
+}
+
+/* 
+
+
+*/

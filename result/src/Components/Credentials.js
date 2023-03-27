@@ -168,7 +168,8 @@ export default function Credentials(props) {
     console.log(text.length);
     if (text.length >= 3) {
       let matches = names.filter((item1, index) => {
-        const regex = new RegExp(`^${text}|(?<=\\s.*(\\S+)\\s)${text}`, "gi");
+        const regex = new RegExp(`^${text}|(?<=\\s)${text}`, "gi");
+        // const regex = new RegExp(`^${text}|(?<=\\s.*(\\S+)\\s)${text}`, "gi");
         return item1.label.match(regex);
       });
 

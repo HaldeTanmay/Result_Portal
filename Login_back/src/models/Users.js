@@ -170,7 +170,6 @@ const AdSchema = new mongoose.Schema({
 //   ]
 
 // const un_logo_model = mongoose.model("users", un_logo_Schema);
-const AdModel = mongoose.model("ad", AdSchema);
 const UserModel = mongoose.model("users", UserSchema);
 
 module.exports = UserModel;

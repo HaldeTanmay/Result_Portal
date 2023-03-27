@@ -1,5 +1,6 @@
 {
   "name": "result",
+  "homepage": "https://parinaam.rollingnotes.in/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

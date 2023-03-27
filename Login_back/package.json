@@ -1,5 +1,6 @@
 {
   "name": "login_back",
+  "homepage": "https://parinaamBackend.rollingnotes.in/",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {

@@ -108,3 +108,115 @@
   }
   
 }
+
+/* authentication  */
+.app_auth{
+  height: 100vh;
+  width: 100vw;
+  /* background: rgba(0,0,0,0.5); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column ;
+  opacity: 0.7;
+  z-index: -333;
+ 
+}
+
+.app_inputs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column ;
+  position: absolute;
+  top: 45%;
+  left: 44%;
+  gap: 2rem;
+}
+.app_inputs input{
+  /* position: absolute; */
+ outline: none;
+ border: none;
+ background: #f7f7f7;
+ padding:1rem;
+ border-radius: 5px;
+ box-shadow:0 0 2px #0066ff inset;
+}
+
+.app_securitybtn{
+  position: relative;
+  background: #fff;
+  width: 70%;
+  height: 3rem;
+  font-family: AllText;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  color: #0066ff;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgb(191 191 191 / 50%);
+  z-index: 1;
+}
+
+
+.app_securitybtn:hover{
+  color: white;
+}
+.app_securitybtn::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: -1;
+  background-color: #0066ff;
+  transform: scaleX(0);
+  transform-origin: right;
+  border-radius: 5px;
+  transition: transform 100ms ease-in-out;
+}
+
+.app_securitybtn:hover::before,
+.app_securitybtn:focus::before{
+  transform: scaleX(1);
+}
+
+@media screen and (max-width: 1024px) {
+  .app_securitybtn{
+    width: 70%;
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .app_securitybtn{
+    width: 70%;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .app_securitybtn{
+    font-size: 1rem;
+  }
+  .app_inputs{
+    left: 26%;
+  }
+}
+
+
+/* custom  blue secrol bar  */
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  background: #f7f7f7;
+  border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb{
+  background: #0066ff;
+  border-radius: 100vw;
+}

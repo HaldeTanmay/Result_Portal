@@ -5,6 +5,8 @@ import { ThreeCircles } from "react-loader-spinner";
 import "../Comp_css/Result.css";
 import LocalPrintshopIcon from "@material-ui/icons/LocalPrintshop";
 import QRCode from "react-qr-code";
+import WarningIcon from "@material-ui/icons/Warning";
+
 
 // import Card from './Card';
 // import { useCallback } from "react";
@@ -95,19 +97,12 @@ class ShowResult extends React.Component {
             <div className="uni_rrr">
               <div className="r_labelll">
                 <div className="result_page_uni_logo_container">
-                  <div className="result_page_uni_logo_phone">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/en/c/cf/Dibrugarh_University_logo.png"
-                      alt=""
-                    />
-                  </div>
                   <div className="result_header">
                     <h1>
                       {un_name}, {s_name}
                     </h1>
                     <h3>{exam_name} Grade Sheet</h3>
                     <h4>{dp_name}</h4>
-                    {/* <h4>Information Technology</h4> */}
                   </div>
                   <div className="result_page_uni_logo">
                     <img
@@ -194,6 +189,22 @@ class ShowResult extends React.Component {
               </div>
             </div>
             <br />
+            <div className="resultpage_disclaimer_container">
+              <div className="resultpage_disclaimer_heading">
+                <WarningIcon />&nbsp;Disclaimer:&nbsp;
+              </div>
+              <div className="resultpage_disclaimer">
+                <p>
+                  bdfgb ddr gfhfghfthth thtr fsfs rfgrd asfsfa fsfaf efes fsegb
+                  ddr gfhfghfthth thtr fsfs rfgrd asfsfa fsfaf efes fsef efes
+                </p>
+                {/* <marquee>
+                  bdfgb ddr gfhfghfthth thtr fsfs rfgrd asfsfa fsfaf efes fsegb
+                  ddr gfhfghfthth thtr fsfs rfgrd asfsfa fsfaf efes fsef efes
+                  fsegb ddr gfhfghfthth thtr fsfs rfgrd asfsfa fsfaf efes fse
+                </marquee> */}
+              </div>
+            </div>
           </div>
           {/* <button className='print_button' onClick={this.generateSimplePDF}>Print</button> */}
           <Pdf targetRef={ref} filename="Result.pdf" y={4} x={18} scale={0.8}>

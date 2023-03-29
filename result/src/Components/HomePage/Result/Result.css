@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Freehand&family=Poppins:wght@400;500;600;700&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Freehand&family=Poppins:wght@400;500;600;700;800;900&family=Ubuntu&display=swap');
 
 .app_result {
   position: absolute;
@@ -72,8 +72,8 @@
   text-transform: capitalize;
 }
 .app_subHeading > span {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 900 !important;
   background: -webkit-linear-gradient(90deg, #ff40e2 0%, #63dcff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

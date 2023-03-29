@@ -89,7 +89,7 @@ const Navbar = () => {
         </StyledBurger>
 
         <Ul className="home_sidebar_links_container" open={open}>
-          <Link className="home_sidebar_links_container_Link" to="/">
+          <Link className="home_sidebar_links_container_Link" to="/Home">
             Home
           </Link>
           {/* <Link className="home_sidebar_links_container_Link" to="/about">
@@ -99,13 +99,20 @@ const Navbar = () => {
             Menu Control
           </Link>
           <Link to="/adStatus" className="home_sidebar_links_container_Link">
-            Add Control
+            Ad Control
           </Link>
           <Link className="home_sidebar_links_container_Link" to="/uploadImage">
             Add Logo
           </Link>
           <Link className="home_sidebar_links_container_Link" to="/footer">
+<<<<<<< HEAD
             Footer Control
+=======
+            Footer
+          </Link>
+          <Link className="home_sidebar_links_container_Link">
+            Menu
+>>>>>>> 833fbf9c9ae8dd91cb4f75709f8868fc24d9b6f3
           </Link>
         </Ul>
       </div>

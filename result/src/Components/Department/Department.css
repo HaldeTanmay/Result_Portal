@@ -1,4 +1,5 @@
 .Depatment_container{
+  overflow-x: hidden;
     text-align: -webkit-center;
     background: url('../../assets/background2.svg');
     background-size: cover;

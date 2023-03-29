@@ -3,3 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+
+@font-face{
+  font-family: Brand;
+  src:url('./fonts//SAMAN___.TTF')
+}
+@font-face{
+  font-family: AllText;
+  src:url('./fonts/CircularStd-Light.otf')
+}

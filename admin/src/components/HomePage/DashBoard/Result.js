@@ -26,9 +26,9 @@ const Result = () => {
       <div className="app_button">
         <p>Welcome to Admin page</p>
         {/* <p>Get all your results at one place</p> */}
-        <Link to="/adStatus">
+        {/* <Link to="/adStatus">
           <button className="app_resultBtn">Dashboard</button>
-        </Link>
+        </Link> */}
       </div>
     </motion.div>
   );

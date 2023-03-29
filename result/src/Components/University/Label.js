@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-
+import Enquiry from '../Footer';
 import './Styles.css'
 import University from './University';
 import ReactGA from "react-ga4";
@@ -18,6 +18,7 @@ export default function Label(props) {
                 {location.state.title}
             </motion.div>
             <University title={location.state.title} />
+            <Enquiry />
         </div>
 
     )

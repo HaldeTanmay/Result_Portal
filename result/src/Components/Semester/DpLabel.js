@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ReactGA from "react-ga4";
 import Semester from './Semester';
+import Enquiry from '../Footer';
 import './semester.css'
 // import "../Comp_css/Univer.css"
 
@@ -19,6 +20,7 @@ export default function UnLabel(props) {
                 {location.state.un_name}
             </motion.div>
             <Semester un_name={location.state.un_name} s_name={location.state.s_name} dp_name={location.state.dp_name} />
+            <Enquiry />
         </div>
 
     )

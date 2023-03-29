@@ -1,5 +1,6 @@
 
 .label_container{
+  overflow-x: hidden;
     font-family: AllText;
     text-align: -webkit-center;
     background: url('../../assets/background2.svg');

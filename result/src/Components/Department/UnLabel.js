@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import ReactGA from "react-ga4";
 import Department from './Department';
 import './Department.css'
+import Enquiry from '../Footer';
 
 export default function UnLabel(props) {
     const location = useLocation();
@@ -17,6 +18,7 @@ export default function UnLabel(props) {
                 {location.state.un_name}
             </motion.div>
             <Department un_name={location.state.un_name} s_name={location.state.s_name} />
+            <Enquiry />
         </div>
 
     )

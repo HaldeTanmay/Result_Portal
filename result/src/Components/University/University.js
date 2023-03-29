@@ -25,6 +25,7 @@ class University extends React.Component {
         // var s_name = { props.title };
         // fetch("https://jsonplaceholder.typicode.com/users")
         fetch(`http://localhost:4000/un/${s_name}`, { params: { s_name } })
+            // fetch(`http://localhost:4000/un/${s_name}`, { params: { s_name } })
             .then((res) => res.json())
             .then((json) => {
                 this.setState({

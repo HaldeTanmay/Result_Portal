@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./footer.css";
 import LinkInfo from "./LinkInfo";
 import { MdOutlineAddBox } from "react-icons/md";
 import Add from "./Add";
+
+import "./footer.css";
+import Navigation from "../HomePage/Hamburger/NavigationMenu"
+
 
 const Footer = () => {
   const [add, setAdd] = useState(false);
@@ -29,6 +32,7 @@ const Footer = () => {
 
   return (
     <div className="footerContainer">
+      <Navigation/>
       <div className="top">Footer Control</div>
       <div className="footerSubcontainer">
         <div className="left">

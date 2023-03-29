@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Lottie from "react-lottie";
 import ReactGA from "react-ga4";
+import Enquiry from '../Components/Footer';
 
 import "../Comp_css/Credential.css";
 // import ChoiceSem from "./Semester/ChoiceSem";
@@ -321,6 +322,7 @@ export default function Credentials(props) {
           </form>
         </div>
       </div>
+      <Enquiry />
     </div>
   );
 }

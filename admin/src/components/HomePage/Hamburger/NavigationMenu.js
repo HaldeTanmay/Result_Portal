@@ -37,7 +37,6 @@ const StyledBurger = styled.div`
       transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
       width: 2.3rem;
       height: 0.4rem;
-      
     }
     &:nth-child(2) {
       transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0)")};
@@ -79,7 +78,11 @@ const Navbar = () => {
   return (
     <>
       <div>
-        <StyledBurger className="background_circle" open={open} onClick={() => setOpen(!open)}>
+        <StyledBurger
+          className="background_circle"
+          open={open}
+          onClick={() => setOpen(!open)}
+        >
           <div />
           <div />
           <div />
@@ -92,11 +95,17 @@ const Navbar = () => {
           {/* <Link className="home_sidebar_links_container_Link" to="/about">
             About
           </Link> */}
+          <Link to="/menu" className="home_sidebar_links_container_Link">
+            Menu Control
+          </Link>
           <Link to="/adStatus" className="home_sidebar_links_container_Link">
             Add Control
           </Link>
           <Link className="home_sidebar_links_container_Link" to="/uploadImage">
             Add Logo
+          </Link>
+          <Link className="home_sidebar_links_container_Link" to="/footer">
+            Footer Control
           </Link>
         </Ul>
       </div>

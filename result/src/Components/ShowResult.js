@@ -27,6 +27,7 @@ class ShowResult extends React.Component {
       year: props.year,
       name: props.name,
       roll: props.roll,
+      logo: "",
     };
   }
 
@@ -46,6 +47,30 @@ class ShowResult extends React.Component {
           DataisLoaded: true,
         });
       });
+    fetch(`http://localhost:4000/cr/getUniversityLogo/${s_name}/${un_name}`, {
+      params: { s_name, un_name, dp_name, exam_name, year, sem, name, roll },
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        this.setState({
+          logo: json.logo,
+        });
+      });
+    // const getUniversityLogo = async () => {
+    // const res = fetch("http://localhost:4000/cr/getUniversityLogo", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     un_name,
+    //   }),
+    // }).then((res) => {
+    // console.log(res);
+    // this.setState({ logo: res.logo });
+    // });
+    // };
+    // getUniversityLogo();
   }
 
   render(props) {
@@ -91,10 +116,7 @@ class ShowResult extends React.Component {
               <div className="r_labelll">
                 <div className="result_page_uni_logo_container">
                   <div className="result_page_uni_logo_phone">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/en/c/cf/Dibrugarh_University_logo.png"
-                      alt=""
-                    />
+                    <img src={this.state.logo} alt="Logo" />
                   </div>
                   <div className="result_header">
                     <h1>
@@ -105,10 +127,11 @@ class ShowResult extends React.Component {
                     {/* <h4>Information Technology</h4> */}
                   </div>
                   <div className="result_page_uni_logo">
-                    <img
+                    {/* <img
                       src="https://upload.wikimedia.org/wikipedia/en/c/cf/Dibrugarh_University_logo.png"
                       alt=""
-                    />
+                    /> */}
+                    <img src={this.state.logo} alt="Logo" />
                   </div>
                 </div>
                 <div className="table_container_cred">

@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./footer.css";
 import LinkInfo from "./LinkInfo";
 import { MdOutlineAddBox } from "react-icons/md";
+import Add from "./Add";
 
 const Footer = () => {
-  // const [name]
-  const [links, setLinks] = useState([]);
-  const [moreFromUs, setMoreFormUs] = useState([]);
   const [add, setAdd] = useState(false);
   const [info, setInfo] = useState([]);
   const [select, setSelect] = useState("type1");
@@ -24,7 +22,7 @@ const Footer = () => {
     const jsonconvert2 = await res2.json();
     setInfo(jsonconvert2);
   };
-
+  console.log(select);
   useEffect(() => {
     getType1Info();
   }, []);
@@ -54,95 +52,40 @@ const Footer = () => {
           </div>
         </div>
         <div className="right">
-          <table>
-            <tbody>
-              <tr>
-                <th>Names</th>
-                <th>Links</th>
-                <th>Update</th>
-                <th>Remove</th>
-              </tr>
+          <div className="main">
+            <div className="row header">
+              <span>Names</span>
+              <span>Links</span>
+              <span>Update</span>
+              <span>Remove</span>
+            </div>
+            <div className="values">
               {info.map((d) => (
                 <LinkInfo
                   key={d["_id"]}
                   id={d["_id"]}
                   name={d["name"]}
                   link={d["link"]}
-                  type="links"
+                  type={select === "type1" ? "links" : "more from us"}
                   setRowSelect={setRowSelect}
                   rowSelect={rowSelect}
                 />
               ))}
-              {add ? (
-                <LinkInfo
-                  id={1}
-                  setRowSelect={setRowSelect}
-                  rowSelect={rowSelect}
-                  key={1}
-                  name={""}
-                  link={""}
-                  type="add"
-                  select={select}
-                  setInfo={setInfo}
-                />
-              ) : null}
-            </tbody>
-          </table>
+            </div>
+          </div>
           <div className="addBtn">
             <button onClick={() => setAdd(!add)}>Add</button>
-            {/* <MdOutlineAddBox size={50} onClick={() => setAdd(!add)} /> */}
-          </div>
-
-          {/* <div className="allLinks">
-            {links.map((d) => (
-              <LinkInfo
-                key={d["_id"]}
-                id={d["_id"]}
-                name={d["name"]}
-                link={d["link"]}
-                type="links"
-              />
-            ))}
-          </div> */}
-        </div>
-        {/* <div className="type1Info">
-          <h1>Links </h1>
-          <div className="allLinks">
-            {links.map((d) => (
-              <LinkInfo
-                key={d["_id"]}
-                id={d["_id"]}
-                name={d["name"]}
-                link={d["link"]}
-                type="links"
-              />
-            ))}
           </div>
         </div>
-        <br />
-        <br />
-        <div className="type2Info">
-          <h1>More from Us</h1>
-          <div className="allLinks">
-            {moreFromUs.map((d) => (
-              <LinkInfo
-                key={d["_id"]}
-                id={d["_id"]}
-                name={d["name"]}
-                link={d["link"]}
-                type="more from us"
-              />
-            ))}
-          </div>
-        </div>
-        <div className="addBtn">
-          <MdOutlineAddBox size={50} onClick={() => setAdd(!add)} />
-        </div>
-        {add ? <LinkInfo key={1} name={""} link={""} type="add" /> : null}
-
-        <br />
-        <br /> */}
       </div>
+      {add ? (
+        <Add
+          // getAllLinks={select === "type1" ? getType1Info : getType2Info}
+          setInfo={setInfo}
+          setAdd={setAdd}
+          type={select === "type1" ? "links" : "more from us"}
+        />
+      ) : null}
     </div>
   );
 };

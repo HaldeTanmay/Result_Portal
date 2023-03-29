@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { RxUpdate } from "react-icons/rx";
+import { MdOutlineDoneAll } from "react-icons/md";
 
 import toast, { Toaster } from "react-hot-toast";
 
 const LinkInfo = (props) => {
   const [name, setName] = useState(props.name);
   const [link, setLink] = useState(props.link);
-  const [display, setDisplay] = useState("block");
+  const [display, sespanisplay] = useState("block");
 
-  const updateData = async (id) => {
-    console.log(props.type, props.select);
-    await fetch("http://localhost:4000/admin/updateFooterLink", {
+  const handleClicked = async (id) => {
+    const res = await fetch("http://localhost:4000/admin/updateMenu", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,13 +22,12 @@ const LinkInfo = (props) => {
         name: name,
         link: link,
       }),
-    }).then((res) => {
-      toast.success("Data Updated Successfully.", { id: "link1" });
     });
+    toast.success("Data Updated Successfully");
   };
 
   const deleteData = async (id) => {
-    await fetch("http://localhost:4000/admin/removeFooterLink", {
+    const res = await fetch("http://localhost:4000/admin/removeMenuLink", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,11 +36,13 @@ const LinkInfo = (props) => {
         id: id,
       }),
     });
-    setDisplay("none");
+    console.log(res);
+    sespanisplay("none");
   };
 
   return (
     <div
+      //   className="row"
       id={props.id === 1 ? "addbox" : null}
       className={props.rowSelect === props.id ? "row active" : "row"}
       style={{
@@ -83,6 +84,7 @@ const LinkInfo = (props) => {
         />
       </span>
       <span
+        className="icons"
         onClick={() => {
           props.setRowSelect(props.id);
         }}
@@ -94,10 +96,11 @@ const LinkInfo = (props) => {
             props.setRowSelect(props.id);
             console.log(props.id);
           }}
-          onClick={() => updateData(props.id)}
+          onClick={() => handleClicked(props.id)}
         />
       </span>
       <span
+        className="icons"
         onClick={() => {
           props.setRowSelect(props.id);
         }}
@@ -109,9 +112,7 @@ const LinkInfo = (props) => {
             props.setRowSelect(props.id);
             console.log(props.id);
           }}
-          onClick={() => {
-            deleteData(props.id);
-          }}
+          onClick={() => deleteData(props.id)}
         />
       </span>
     </div>
@@ -137,7 +138,7 @@ const LinkInfo = (props) => {
     //     />
     //   </div>
     //   <div className="btns">
-    //     <button onClick={() => updateData(props.id)}>Save</button>
+    //     <button onClick={() => handleClicked(props.id)}>Save</button>
     //     {props.type != "add" ? (
     //       <button onClick={() => deleteData(props.id)}>delete</button>
     //     ) : null}

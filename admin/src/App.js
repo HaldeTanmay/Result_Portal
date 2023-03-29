@@ -6,6 +6,7 @@ import UploadImage from "./components/uploadingImg/UploadImg";
 // import HomePage from "./components/HomePage/Home";
 import Home from "./components/HomePage/Home";
 import Footer from "./components/footerSection/Footer";
+import Menu from "./components/menuSection/Menu";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/uploadImage" element={<UploadImage />}></Route>
           <Route exact path="/adStatus" element={<AdStatus />}></Route>
           <Route exact path="/footer" element={<Footer />}></Route>
+          <Route exact path="/menu" element={<Menu />}></Route>
         </Routes>
       </Router>
     </div>

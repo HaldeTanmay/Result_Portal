@@ -106,69 +106,6 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-const un_logo_Schema = new mongoose.Schema({
-  state: {
-    type: String,
-    required: false,
-  },
-  un_name: {
-    type: String,
-    required: false,
-  },
-  logo: {
-    type: String,
-    required: false,
-  },
-  disclaimer: {
-    type: String,
-    required: false,
-  },
-});
-
-const AdSchema = new mongoose.Schema({
-  Ad: {
-    type: String,
-    required: true,
-  },
-  Status: {
-    type: String,
-    required: true,
-  },
-});
-
-// state: {
-//     type: String,
-//     required: false,
-// },
-// un_name: {
-//     type: String,
-//     required: false,
-// },
-// dp_name: {
-//     type: String,
-//     required: false,
-// },
-// sem: {
-//     type: String,
-//     required: false,
-// }
-// });
-
-// const UserModel = mongoose.model("university", UserSchema);
-// module.exports = UserModel;
-
-/**
- * Paste one or more documents here
- */
-// [
-//     {"state" : "Goa", "un_name" : "a university","dp_name" : "CS", "sem": "I" },
-//     {"state" : "Goa", "un_name" : "a university", "dp_name" : "IT","sem": "II" },
-//     {"state" : "Goa", "un_name" : "b university", "dp_name" : "EXTC","sem": "III" },
-//     {"state" : "Goa", "un_name" : "b university","dp_name" : "IT", "sem": "IV" },
-//     {"state" : "Goa", "un_name" : "c university", "dp_name" : "ELEC", "sem": "V" },
-//     {"state" : "Bihar", "un_name" : "a university","dp_name" : "CS", "sem": "II" }
-//   ]
-
 // const un_logo_model = mongoose.model("users", un_logo_Schema);
 const UserModel = mongoose.model("users", UserSchema);
 

@@ -4,7 +4,7 @@ import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import "./uploadImg.css";
 import Navbar from "../HomePage/Hamburger/NavigationMenu";
 import TextField from "@mui/material/TextField";
-import { MenuItem } from "@mui/material";
+import { MenuItem, Select } from "@mui/material";
 
 // const state = ["Maharaastra", "Pune"];
 // const collegeNames = ["SLRTCE", "Athrva"];
@@ -17,11 +17,22 @@ function UploadImage() {
   const [disclaimer, setDisclaimer] = useState("");
   const [stateName, setStateName] = useState("Select");
   const [collegeName, setCollegeName] = useState("Select");
+
+  const clearStates = () => {
+    setCollegeNameList(["Select"]);
+    setImgUrl(null);
+    setProgresspercent(0);
+    setFilePath(null);
+    setDisclaimer("");
+    setStateName("Select");
+    setCollegeName("Select");
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     const file = filePath;
-    if (!file) return;
-    const storageRef = ref(storage, `files/${file.name}`);
+    console.log("file not found");
+    if (!file || file == "Upload Your Image") return;
+    const storageRef = ref(storage, `/${file.name}`);
     const uploadTask = uploadBytesResumable(storageRef, file);
 
     uploadTask.on(
@@ -65,7 +76,10 @@ function UploadImage() {
         disclaimer: disclaimer,
       }),
     })
-      .then((res) => console.log(res))
+      .then((res) => {
+        alert("Logo Uploaded Successfully");
+        clearStates();
+      })
       .catch((e) => console.log(e));
   };
 
@@ -95,7 +109,9 @@ function UploadImage() {
     <>
       <Navbar />
       <div className="UploadImageContainer">
-      <div className="ad_control_label" style={{ marginBottom: "5rem" }}>Logo Control</div>
+        <div className="ad_control_label" style={{ marginBottom: "5rem" }}>
+          Logo Control
+        </div>
         <form className="form" onSubmit={handleSubmit}>
           <div className="textfield_container">
             <div className="state_college_container">
@@ -183,7 +199,9 @@ function UploadImage() {
                 style={{ display: "none" }}
               />
               <label for="actual_btn">
-                <div className="custom_choose">Upload Your Image</div>
+                <div className="custom_choose">
+                  {filePath ? filePath.name : "Upload Your Image"}
+                </div>
               </label>
             </div>
 
@@ -221,14 +239,14 @@ function UploadImage() {
               </div>
             )}
             {/* {progresspercent == 100 && alert("Logo Uploaded Successfully")} */}
-            {imgUrl && (
+            {/* {imgUrl && (
               <div>
                 <p>State : {stateName}</p>
                 <p>Collge Name : {collegeName}</p>
                 <p>Disclaimer : {disclaimer}</p>
                 <img src={imgUrl} alt="uploaded file" height={200} />
               </div>
-            )}
+            )} */}
           </div>
         </form>
       </div>

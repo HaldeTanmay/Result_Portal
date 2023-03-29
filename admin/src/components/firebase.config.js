@@ -5,13 +5,13 @@ import { getStorage } from "firebase/storage";
 // https://firebase.google.com/docs/web/setup#available-libraries
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDxwUjqWYaIP23Try_gPsmUOci7cakDjd8",
-  authDomain: "imagehost-140b6.firebaseapp.com",
-  projectId: "imagehost-140b6",
-  storageBucket: "imagehost-140b6.appspot.com",
-  messagingSenderId: "760078403877",
-  appId: "1:760078403877:web:275b6fdc9def46476372cc",
-  measurementId: "G-FYN8Z3XBJ7",
+  apiKey: "AIzaSyDoQIcLFMUJQnLZeK-JleAXv9JKc7kqRHU",
+  authDomain: "parinaam-527ae.firebaseapp.com",
+  projectId: "parinaam-527ae",
+  storageBucket: "parinaam-527ae.appspot.com",
+  messagingSenderId: "405532201266",
+  appId: "1:405532201266:web:0e39f37a5e33738959872b",
+  measurementId: "G-YD7NXNNW0J",
 };
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);

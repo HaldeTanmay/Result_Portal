@@ -6,6 +6,8 @@ const UserModel = require("../models/Users");
 // const un_logo_model = require("../models/Users");
 const StudModel = require("../models/Stud");
 const footerModel = require("../models/Footer");
+const UniversityInfoModel = require("../models/universityInfo");
+const MenuModel = require("../models/menu");
 
 router.get("/", (req, res) => {
   res.send("welcome");
@@ -215,31 +217,6 @@ router.get("/sr/:s_name/:un_name/:dp_name/:sem/", async (req, res) => {
   }
 });
 
-// upload the Image
-router.post("/admin/upload", async (req, res) => {
-  // console.log(req.body);
-  // res.json({ message: "awesome" })
-  try {
-    const { un_name, state, logo, disclaimer } = req.body;
-    if (!un_name || !state || !logo || !disclaimer) {
-      return res.status(400).json({ error: "Plz filled the data" });
-    }
-    const insertLogo = new UserModel({
-      un_name: un_name,
-      state: state,
-      logo: logo,
-      disclaimer: disclaimer,
-    });
-
-    const newInsertLogo = insertLogo.save();
-
-    res.status(200).json({ message: "Logo Added!" });
-  } catch (e) {
-    res.status(999).json({ message: e });
-    console.log(e);
-  }
-});
-
 router.get("/allStates", async (req, res) => {
   try {
     const data = await UserModel.distinct("state");
@@ -279,6 +256,50 @@ router.post("/adStatus", async (req, res) => {
   }
 });
 
+// upload the Image
+router.post("/admin/upload", async (req, res) => {
+  try {
+    const { un_name, state, logo, disclaimer } = req.body;
+    if (!un_name || !state || !logo || !disclaimer) {
+      return res.status(400).json({ error: "Plz filled the data" });
+    }
+    const insertLogo = new UniversityInfoModel({
+      un_name: un_name,
+      state: state,
+      logo: logo,
+      disclaimer: disclaimer,
+    });
+
+    const newInsertLogo = insertLogo.save();
+
+    res.status(200).json({ message: "Logo Added !" });
+  } catch (e) {
+    res.status(999).json({ message: e });
+    console.log(e);
+  }
+});
+
+// for getting university Logo
+router.get("/cr/getUniversityLogo/:state/:un_name", async (req, res) => {
+  try {
+    // const { un_name } = req.body;
+    // console.log(un_name);
+    // if (!un_name) {
+    //   return res.status(400).json({ error: "Plz filled the data" });
+    // }
+    console.log(req.params.un_name);
+    const findLogo = await UniversityInfoModel.findOne({
+      un_name: req.params.un_name,
+      s_name: req.params.state,
+    });
+    res.send(findLogo);
+  } catch (e) {
+    res.status(999).json({ message: e });
+    console.log(e);
+  }
+});
+
+// ------------------------footer------------------------------
 // for uploading footer links
 router.post("/admin/addFooterLink", async (req, res) => {
   try {
@@ -348,6 +369,7 @@ router.post("/admin/updateFooterLink", async (req, res) => {
   }
 });
 
+// For footer
 router.get("/getallLinks/:type", async (req, res) => {
   try {
     console.log(req.params.type);
@@ -360,4 +382,82 @@ router.get("/getallLinks/:type", async (req, res) => {
   }
 });
 
+// -------------------------------------for menu----------------------------------------
+
+// for uploading Menu links
+router.post("/admin/addMenuLink", async (req, res) => {
+  try {
+    const { name, link } = req.body;
+    if (!name || !link) {
+      return res.status(400).json({ error: "Plz filled the data" });
+    }
+    const insertMenu = new MenuModel({
+      name: name,
+      link: link,
+    });
+    const insertNewMenuLink = insertMenu.save();
+    res.status(200).json({ message: "New Menu Added!" });
+  } catch (e) {
+    res.status(999).json({ message: e });
+    console.log(e);
+  }
+});
+
+// for removing footer link
+router.post("/admin/removeMenuLink", async (req, res) => {
+  try {
+    const { id } = req.body;
+    if (!id) {
+      return res.status(400).json({ error: "Plz filled the data" });
+    }
+    const result = await MenuModel.deleteOne({
+      _id: id,
+    });
+    let msg;
+    if (result.deletedCount === 1) {
+      msg = "Successfully deleted one document.";
+    } else {
+      msg = "No documents matched the query. Deleted 0 documents.";
+    }
+    res.status(200).json({ message: msg });
+  } catch (e) {
+    res.status(999).json({ message: e });
+    console.log(e);
+  }
+});
+
+// for updating new menu
+router.post("/admin/updateMenu", async (req, res) => {
+  try {
+    const { id, name, link } = req.body;
+    if (!id) {
+      return res.status(400).json({ error: "Plz filled the data" });
+    }
+    const result = await MenuModel.updateOne(
+      {
+        _id: id,
+      },
+      {
+        name,
+        link,
+      }
+    );
+    res.status(200).json({
+      message: `${result.matchedCount} document(s) matched the filter, updated ${result.modifiedCount} document(s)`,
+    });
+  } catch (e) {
+    res.status(999).json({ message: e });
+    console.log(e);
+  }
+});
+
+// get all menus
+router.get("/getallMenuLinks", async (req, res) => {
+  try {
+    const data = await MenuModel.find();
+    res.send(data);
+  } catch (e) {
+    res.send(e);
+  }
+});
 module.exports = router;

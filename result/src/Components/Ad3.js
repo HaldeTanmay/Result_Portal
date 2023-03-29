@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import CloseIcon from "@material-ui/icons/Close";
 import "../Comp_css/Ad.css";
 import ReactGA from "react-ga4";
+import { Adsense } from '@ctrl/react-adsense';
 function Ad3(props) {
   const [counter, setCounter] = useState(5);
   const [displayBtn, setDisplayBtn] = useState(false);
@@ -88,9 +89,15 @@ function Ad3(props) {
         className="Ad_card"
       >
         <div className="img_container">
-          <img
+          {/* <img
             src="https://source.unsplash.com/600x600/?advertisements,product"
             alt="Advertisement"
+          /> */}
+          <Adsense
+            client="ca-pub-2178006875471084"
+            slot="6439554681"
+            style={{ width: 800, height: 400 }}
+            format=""
           />
         </div>
         <br />

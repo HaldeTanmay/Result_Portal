@@ -2,9 +2,9 @@ import React from "react";
 import ResultWindow from "./ResultWindow";
 import Pdf from "react-to-pdf";
 import { ThreeCircles } from "react-loader-spinner";
-import smapleQr from "../Images/smapleQr.jpg";
 import "../Comp_css/Result.css";
 import LocalPrintshopIcon from "@material-ui/icons/LocalPrintshop";
+import QRCode from "react-qr-code";
 
 // import Card from './Card';
 // import { useCallback } from "react";
@@ -31,7 +31,7 @@ class ShowResult extends React.Component {
   }
 
   componentDidMount() {
-    const { s_name, un_name, dp_name, exam_name, sem, name, roll, year, ssn } =
+    const { s_name, un_name, dp_name, exam_name, sem, name, roll, year } =
       this.state;
     // var s_name = { props.title };
     // fetch("https://jsonplaceholder.typicode.com/users")
@@ -42,7 +42,7 @@ class ShowResult extends React.Component {
       .then((res) => res.json())
       .then((json) => {
         this.setState({
-          items: json,
+          items: json[0],
           DataisLoaded: true,
         });
       });
@@ -63,6 +63,11 @@ class ShowResult extends React.Component {
       roll,
       year,
     } = this.state;
+
+
+    // console.log(items.map((item) => (
+    //   item.sub1_name
+    // )));
 
     if (!DataisLoaded)
       return (
@@ -154,29 +159,39 @@ class ShowResult extends React.Component {
                   </div>
                 </div>
               </div>
-              {items.map((item) => (
-                <ResultWindow
-                  key={1}
-                  sub1_name={item.sub1_name}
-                  sub2_name={item.sub2_name}
-                  sub3_name={item.sub3_name}
-                  sub4_name={item.sub4_name}
-                  sub5_name={item.sub5_name}
-                  sub6_name={item.sub6_name}
-                  sub1_marks={item.sub1_marks}
-                  sub2_marks={item.sub2_marks}
-                  sub3_marks={item.sub3_marks}
-                  sub4_marks={item.sub4_marks}
-                  sub5_marks={item.sub5_marks}
-                  sub6_marks={item.sub6_marks}
-                  total={item.Total}
-                  result={item.result}
-                />
-              ))}
+              {/* {items.map((item) => ( */}
+              <ResultWindow
+                key={1}
+                sub1_name={items.sub1_name}
+                sub2_name={items.sub2_name}
+                sub3_name={items.sub3_name}
+                sub4_name={items.sub4_name}
+                sub5_name={items.sub5_name}
+                sub6_name={items.sub6_name}
+                sub1_marks={items.sub1_marks}
+                sub2_marks={items.sub2_marks}
+                sub3_marks={items.sub3_marks}
+                sub4_marks={items.sub4_marks}
+                sub5_marks={items.sub5_marks}
+                sub6_marks={items.sub6_marks}
+                total={items.Total}
+                result={items.result}
+                cgpa={items.cgpa}
+              />
+              {/* ))} */}
             </div>
             <br />
             <div className="result_page_qr_code">
-              <img src={smapleQr} alt="" />
+              {/* <img src={smapleQr} alt="" /> */}
+              {/* <QRCode value="hey" /> */}
+              <div style={{ height: "auto", margin: "0 auto", maxWidth: 64, width: "100%" }}>
+                <QRCode
+                  size={256}
+                  style={{ height: "auto", maxWidth: "142%", width: "142%" }}
+                  value={`http://localhost:3000/result/${name}/${roll}/${s_name}/${un_name}/${dp_name}/${sem}/${year}/${exam_name}`}
+                  viewBox={`0 0 256 256`}
+                />
+              </div>
             </div>
             <br />
           </div>

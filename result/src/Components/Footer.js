@@ -31,7 +31,7 @@ const Enquiry = () => {
 
   return (
     <>
-      <div style={{ height: "100vh" }}></div>
+      <div style={{ height: "12vh" }}></div>
       <NavigationMenu />
       <footer className="footer_main">
         <div className="foot_cont">

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../Comp_css/Ad.css";
 import GoogleAd from "./GoogleAd";
+import Enquiry from '../Components/Footer';
 import ReactGA from "react-ga4";
 let i = 0;
 export default function Year(props) {

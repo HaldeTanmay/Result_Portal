@@ -25,7 +25,7 @@ const Menu = () => {
 
   return (
     <div className="menuContainer">
-      <div className="top">Footer Control</div>
+      <div className="top">Menu Control</div>
       <div className="menuSubcontainer">
         <div className="left">Menu</div>
         <div className="right">

@@ -7,7 +7,6 @@ import LocalPrintshopIcon from "@material-ui/icons/LocalPrintshop";
 import QRCode from "react-qr-code";
 import WarningIcon from "@material-ui/icons/Warning";
 
-
 // import Card from './Card';
 // import { useCallback } from "react";
 // const axios = require('axios');
@@ -91,7 +90,6 @@ class ShowResult extends React.Component {
       year,
     } = this.state;
 
-
     // console.log(items.map((item) => (
     //   item.sub1_name
     // )));
@@ -125,6 +123,9 @@ class ShowResult extends React.Component {
                   <div className="result_page_uni_logo_phone">
                     <img src={this.state.logo} alt="Logo" />
                   </div>
+                  {/* <div className="result_page_uni_logo_phone">
+                    <img src={this.state.logo} alt="Logo" />
+                  </div> */}
                   <div className="result_header">
                     <h1>
                       {un_name}, {s_name}
@@ -208,7 +209,14 @@ class ShowResult extends React.Component {
             <div className="result_page_qr_code">
               {/* <img src={smapleQr} alt="" /> */}
               {/* <QRCode value="hey" /> */}
-              <div style={{ height: "auto", margin: "0 auto", maxWidth: 64, width: "100%" }}>
+              <div
+                style={{
+                  height: "auto",
+                  margin: "0 auto",
+                  maxWidth: 64,
+                  width: "100%",
+                }}
+              >
                 <QRCode
                   size={256}
                   style={{ height: "auto", maxWidth: "142%", width: "142%" }}
@@ -220,7 +228,8 @@ class ShowResult extends React.Component {
             <br />
             <div className="resultpage_disclaimer_container">
               <div className="resultpage_disclaimer_heading">
-                <WarningIcon />&nbsp;Disclaimer:&nbsp;
+                <WarningIcon />
+                &nbsp;Disclaimer:&nbsp;
               </div>
               <div className="resultpage_disclaimer">
                 <p>

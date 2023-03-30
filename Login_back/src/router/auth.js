@@ -6,6 +6,7 @@ const UserModel = require("../models/Users");
 // const un_logo_model = require("../models/Users");
 const StudModel = require("../models/Stud");
 const footerModel = require("../models/Footer");
+const AdModel = require("../models/Ad");
 const UniversityInfoModel = require("../models/universityInfo");
 const MenuModel = require("../models/menu");
 
@@ -16,7 +17,7 @@ router.get("/", (req, res) => {
 router.get("/ad/:num", async (req, res) => {
   try {
     // const data = await AdModel.find();
-    const data = await UserModel.distinct("Status", { Ad: req.params.num });
+    const data = await AdModel.distinct("Status", { Ad: req.params.num });
     res.send(data);
   } catch (e) {
     res.send(e);
@@ -247,7 +248,7 @@ router.post("/adStatus", async (req, res) => {
     if (!Ad || !Status) {
       return res.status(400).json({ error: "Plz select write options" });
     }
-    const status = await UserModel.updateOne(
+    const status = await AdModel.updateOne(
       { Ad: Ad },
       { $set: { Status: Status } }
     );

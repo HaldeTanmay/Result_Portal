@@ -105,9 +105,8 @@ const Navbar = () => {
             Add Logo
           </Link>
           <Link className="home_sidebar_links_container_Link" to="/footer">
-            Footer Control Footer
+            Footer Control
           </Link>
-          <Link className="home_sidebar_links_container_Link">Menu</Link>
         </Ul>
       </div>
     </>

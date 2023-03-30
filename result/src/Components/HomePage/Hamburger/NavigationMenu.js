@@ -105,6 +105,9 @@ const Navbar = () => {
           <Link className="home_sidebar_links_container_Link" to="/">
             Home
           </Link>
+          <Link className="home_sidebar_links_container_Link" to="/about">
+            About
+          </Link>
           {links.map((d) => (
             <Link className="home_sidebar_links_container_Link" to={d.link}>
               {d.name}

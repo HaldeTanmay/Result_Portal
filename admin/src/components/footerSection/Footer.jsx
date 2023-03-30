@@ -32,7 +32,7 @@ const Footer = () => {
 
   return (
     <div className="footerContainer">
-      <Navigation/>
+      <Navigation />
       <div className="top">Footer Control</div>
       <div className="footerSubcontainer">
         <div className="left">

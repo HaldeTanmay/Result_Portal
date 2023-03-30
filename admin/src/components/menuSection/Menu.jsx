@@ -4,6 +4,7 @@ import LinkInfo from "./LinkInfo";
 // import LinkInfo from "../footerSection/LinkInfo";
 import { MdOutlineAddBox } from "react-icons/md";
 import Add from "./Add";
+import Navbar from "../HomePage/Hamburger/NavigationMenu";
 
 const Menu = () => {
   // const [name]
@@ -24,6 +25,8 @@ const Menu = () => {
   }, []);
 
   return (
+    <>
+    <Navbar />
     <div className="menuContainer">
       <div className="top">Menu Control</div>
       <div className="menuSubcontainer">
@@ -57,6 +60,7 @@ const Menu = () => {
       </div>
       {add ? <Add setAdd={setAdd} getAllMenus={getAllMenus} /> : null}
     </div>
+    </>
   );
 };
 

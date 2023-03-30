@@ -122,12 +122,9 @@ class ShowResult extends React.Component {
             <div className="uni_rrr">
               <div className="r_labelll">
                 <div className="result_page_uni_logo_container">
-<<<<<<< HEAD
-                  <div className="result_page_uni_logo_phone">
+                  {/* <div className="result_page_uni_logo_phone">
                     <img src={this.state.logo} alt="Logo" />
-                  </div>
-=======
->>>>>>> 833fbf9c9ae8dd91cb4f75709f8868fc24d9b6f3
+                  </div> */}
                   <div className="result_header">
                     <h1>
                       {un_name}, {s_name}

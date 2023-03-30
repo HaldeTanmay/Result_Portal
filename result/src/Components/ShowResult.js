@@ -120,9 +120,6 @@ class ShowResult extends React.Component {
             <div className="uni_rrr">
               <div className="r_labelll">
                 <div className="result_page_uni_logo_container">
-                  <div className="result_page_uni_logo_phone">
-                    <img src={this.state.logo} alt="Logo" />
-                  </div>
                   {/* <div className="result_page_uni_logo_phone">
                     <img src={this.state.logo} alt="Logo" />
                   </div> */}

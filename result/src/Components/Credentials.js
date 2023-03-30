@@ -159,7 +159,8 @@ export default function Credentials(props) {
       .then((res) => res.json())
       .then((json) => {
         setNames(
-          json.map((item) => ({ label: item.name, rll: Math.floor(item.roll) }))
+          json.map((item) => ({ label: item.name, rll: item.roll }))
+          // json.map((item) => ({ label: item.name, rll: Math.floor(item.roll) }))
         );
       });
   }, []);

@@ -72,7 +72,8 @@ router.get(
         dp_name: req.params.dp_name,
         exam_name: req.params.exam_name,
         year: req.params.year,
-        roll: `${req.params.roll}.0`,
+        roll: req.params.roll,
+        // roll: `${req.params.roll}.0`,
         sem: req.params.sem,
       });
       res.send(data);
@@ -120,7 +121,8 @@ router.get(
         dp_name: req.params.dp_name,
         exam_name: req.params.exam_name,
         year: req.params.year,
-        roll: `${req.params.roll}.0`,
+        roll: req.params.roll,
+        // roll: `${req.params.roll}.0`,
         sem: req.params.sem,
       });
       res.send(data);
@@ -169,7 +171,8 @@ router.post("/cr", async (req, res) => {
       roll,
       mothers_name,
     } = req.body;
-    const roll1 = `${roll}.0`;
+    const roll1 = roll;
+    // const roll1 = `${roll}.0`;
     if (
       !exam_name ||
       !name ||

@@ -37,7 +37,6 @@ const StyledBurger = styled.div`
       transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
       width: 2.3rem;
       height: 0.4rem;
-      
     }
     &:nth-child(2) {
       transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0)")};
@@ -75,11 +74,28 @@ const Ul = styled.ul`
 `;
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [links, setLinks] = useState([]);
+
+  // for get all link for linksType
+  const getAllLinks = async () => {
+    const res = await fetch("http://localhost:4000/getallMenuLinks");
+    const jsonconvert = await res.json();
+    setLinks(jsonconvert);
+    console.log(jsonconvert);
+  };
+
+  useEffect(() => {
+    getAllLinks();
+  }, []);
 
   return (
     <>
       <div>
-        <StyledBurger className="background_circle" open={open} onClick={() => setOpen(!open)}>
+        <StyledBurger
+          className="background_circle"
+          open={open}
+          onClick={() => setOpen(!open)}
+        >
           <div />
           <div />
           <div />
@@ -89,9 +105,11 @@ const Navbar = () => {
           <Link className="home_sidebar_links_container_Link" to="/">
             Home
           </Link>
-          <Link className="home_sidebar_links_container_Link" to="/about">
-            About
-          </Link>
+          {links.map((d) => (
+            <Link className="home_sidebar_links_container_Link" to={d.link}>
+              {d.name}
+            </Link>
+          ))}
         </Ul>
       </div>
     </>

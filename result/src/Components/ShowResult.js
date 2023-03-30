@@ -29,6 +29,7 @@ class ShowResult extends React.Component {
       name: props.name,
       roll: props.roll,
       logo: "",
+      disclaimer: "",
     };
   }
 
@@ -48,13 +49,12 @@ class ShowResult extends React.Component {
           DataisLoaded: true,
         });
       });
-    fetch(`http://localhost:4000/cr/getUniversityLogo/${s_name}/${un_name}`, {
-      params: { s_name, un_name, dp_name, exam_name, year, sem, name, roll },
-    })
+    fetch(`http://localhost:4000/cr/getUniversityLogo/${s_name}/${un_name}`)
       .then((res) => res.json())
       .then((json) => {
         this.setState({
           logo: json.logo,
+          disclaimer: json.disclaimer,
         });
       });
     // const getUniversityLogo = async () => {
@@ -121,7 +121,7 @@ class ShowResult extends React.Component {
               <div className="r_labelll">
                 <div className="result_page_uni_logo_container">
                   <div className="result_page_uni_logo_phone">
-                    <img src={this.state.logo} alt="Logo" />
+                    {/* <img src={this.state.logo} alt="Logo" /> */}
                   </div>
                   {/* <div className="result_page_uni_logo_phone">
                     <img src={this.state.logo} alt="Logo" />
@@ -232,10 +232,7 @@ class ShowResult extends React.Component {
                 &nbsp;Disclaimer:&nbsp;
               </div>
               <div className="resultpage_disclaimer">
-                <p>
-                  bdfgb ddr gfhfghfthth thtr fsfs rfgrd asfsfa fsfaf efes fsegb
-                  ddr gfhfghfthth thtr fsfs rfgrd asfsfa fsfaf efes fsef efes
-                </p>
+                <p>{this.state.disclaimer}</p>
                 {/* <marquee>
                   bdfgb ddr gfhfghfthth thtr fsfs rfgrd asfsfa fsfaf efes fsegb
                   ddr gfhfghfthth thtr fsfs rfgrd asfsfa fsfaf efes fsef efes

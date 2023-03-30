@@ -267,16 +267,26 @@ router.post("/admin/upload", async (req, res) => {
     if (!un_name || !state || !logo || !disclaimer) {
       return res.status(400).json({ error: "Plz filled the data" });
     }
-    const insertLogo = new UniversityInfoModel({
+    const findLogo = await UniversityInfoModel.findOne({
       un_name: un_name,
       state: state,
-      logo: logo,
-      disclaimer: disclaimer,
     });
-
-    const newInsertLogo = insertLogo.save();
-
-    res.status(200).json({ message: "Logo Added !" });
+    if (findLogo) {
+      await UniversityInfoModel.updateOne(
+        { un_name, state },
+        { logo, disclaimer }
+      );
+      res.status(200).json({ message: "Logo Added !" });
+    } else {
+      const insertLogo = new UniversityInfoModel({
+        un_name: un_name,
+        state: state,
+        logo: logo,
+        disclaimer: disclaimer,
+      });
+      insertLogo.save();
+      res.status(200).json({ message: "Logo Added !" });
+    }
   } catch (e) {
     res.status(999).json({ message: e });
     console.log(e);
@@ -291,11 +301,12 @@ router.get("/cr/getUniversityLogo/:state/:un_name", async (req, res) => {
     // if (!un_name) {
     //   return res.status(400).json({ error: "Plz filled the data" });
     // }
-    console.log(req.params.un_name);
+    console.log(req.params.un_name, req.params.state);
     const findLogo = await UniversityInfoModel.findOne({
       un_name: req.params.un_name,
-      s_name: req.params.state,
+      state: req.params.state,
     });
+    console.log(findLogo);
     res.send(findLogo);
   } catch (e) {
     res.status(999).json({ message: e });

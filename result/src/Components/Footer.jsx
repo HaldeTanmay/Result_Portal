@@ -8,7 +8,6 @@ import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import { BsTwitter, BsPinterest, BsWhatsapp } from "react-icons/bs";
 import playStore from "../assets/footer/playStore.png";
 import amezon from "../assets/footer/amezon.png";
-// ssss
 
 const Enquiry = () => {
   const [links, setLinks] = useState([]);
@@ -38,11 +37,19 @@ const Enquiry = () => {
           <div className="top">
             <div className="row footer-col">
               <div id="logoContainer">
+                <div className="subSection">
+                  <div className="text">
+                    <div className="top">ROLLINGNOTES</div>
+                    <div className="bottom">
+                      <span>WE ROLL, YOU NOTE</span>
+                    </div>
+                  </div>
+                  <img
+                    src="https://i0.wp.com/rollingnotes.in/wp-content/uploads/2019/07/onlinelogomaker-122918-1437-0140.png?fit=100%2C100&ssl=1"
+                    alt=""
+                  />
+                </div>
                 <h1 id="logo">Parinaam</h1>
-                <img
-                  src="https://i0.wp.com/rollingnotes.in/wp-content/uploads/2019/07/onlinelogomaker-122918-1437-0140.png?fit=100%2C100&ssl=1"
-                  alt=""
-                />
               </div>
               <section className="section1">
                 <h3> Contact With Us</h3>

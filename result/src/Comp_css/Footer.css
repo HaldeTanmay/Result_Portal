@@ -1,33 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Loved+by+the+King&family=Poppins:wght@900&display=swap');
+
 .footer_main{
     border-top-left-radius: 125px;
     bottom: 0;
     padding: 0 11vw;
     padding-top: 70px;
-    /* background: linear-gradient(to right , #000428,#004e92);
-    background: linear-gradient(to right , #1e3c72,#2a5298);
-    background: linear-gradient(to right , #0f0c29, #302b63,#24243e); */
     background: linear-gradient(to left, #0066ff,#004e92);
 }
 
 .foot_cont{
-    /* max-width: 1170px; */
-    /* background: linear-gradient(to right , #00093c, #2d0b00); */
     margin: auto;
-    
-    /* height: 100vh; */
-
 }
 
 #logoContainer{
     display: flex;
-    flex-direction: column;
-    /* justify-content: flex-end; */
+    flex-direction: column; 
     align-items: flex-end;
 }
-
-/* #logoContainer div{
-    text-align: center;
-} */
+ 
 
 #logoContainer img{
     width: 3vw;
@@ -42,11 +32,9 @@
     flex-wrap: wrap;
     margin-bottom: 10vh;
     justify-content: space-evenly;
+    text-align: left;
 } 
-
-/* #row2{
-    gap: 1vw;
-} */
+ 
 
 ul{
     list-style: none;
@@ -123,17 +111,13 @@ i{
     align-items: center;
     transition: all 0.3s ease;
     gap: 1vw;
-    
-    /* font-family:'Circular'; */
 }
 
 .footer-col ul li a .logo{
     color: #17acdd;
-}
-/* .footer-col ul li a:hover{
-color: #fff;
-padding-left:8px;
-}  */
+} 
+
+
 .footer-col ul li input{
     border: none;
   border-bottom: 2px solid gray;
@@ -187,30 +171,74 @@ padding: 5px;
     transform: scaleX(0);
     transform-origin: right;
 }
-
-/* #foot-btn:hover::before,
-#foot-btn:focus::before {
-  transform: scaleX(1);
-}
-#foot-btn:hover {
-  color: #fff;
-  transform: 1s;
-} */
+ 
 .footer-col #icon{
     font-size: 2rem;
     padding: 15px;
     color: #fff;
-
 }
+
+.footer-col .subSection{
+    display: flex;
+    align-items: center;
+    padding-bottom: 2vh;
+    gap: 1vw;
+} 
+
+.footer-col .text .top{
+    font-size: 1rem;
+    font-weight: 900;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.footer-col .text .bottom{
+    font-size: .8rem;
+    font-family: 'Loved by the King', cursive;
+    padding: 0;
+}
+
+/* .footer-col .subSection .text, 
+.footer-col .subSection img
+{
+    flex:1;
+} */
+
 @font-face {
     font-family: 'Samarkan Oblique';
     font-style: normal;
     font-weight: normal;
     src: local('Samarkan Oblique'), url('SAMAN___.TTF') format('woff');
     }
+
 #logo{
     font-family: 'Samarkan Oblique';
+    text-align: center;
+    width: 100%;
+    /* position: relative;
+    -webkit-text-stroke: 0.0001vw #dcdcdc; */
 }
+
+
+/* .footer-col #logo::before {
+    content: "Parinaam";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: -webkit-linear-gradient(
+      45deg,
+      #0c0050,
+      #0258c9,
+      #21a6e4,
+      #68f3fd
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0vw #dcdcdc;
+    overflow: hidden;
+  } */
 
 .footer-col .download_options{
     display: flex;

@@ -291,3 +291,7 @@
         padding: 2% 2%;
     }
 }
+
+.footerContainer .left div:hover{
+    cursor: pointer;
+}

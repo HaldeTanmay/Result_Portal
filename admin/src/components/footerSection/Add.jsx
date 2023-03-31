@@ -84,7 +84,7 @@ const Add = (props) => {
               type="text"
               value={link}
               onChange={(e) => setLink(e.target.value)}
-              placeholder="www.link.com"
+              placeholder="http://www.link.com"
             />
           </div>
         </div>

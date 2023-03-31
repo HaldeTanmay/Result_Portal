@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../Comp_css/Ad.css";
 import GoogleAd from "./GoogleAd";
-import Enquiry from '../Components/Footer';
+import Enquiry from "../Components/Footer";
 import ReactGA from "react-ga4";
 let i = 0;
 export default function Year(props) {
@@ -25,23 +25,21 @@ export default function Year(props) {
   const [ad, setAd] = useState("");
   useEffect(() => {
     const b = async () => {
-      await fetch(
-        `http://localhost:4000/ad/2`
-      ).then((res) => res.json())
+      await fetch(`http://localhost:4000/ad/2`)
+        .then((res) => res.json())
         .then((json) => {
-          setAd(json[0] == "On" ? 'On' : 'Off');
+          setAd(json[0] == "On" ? "On" : "Off");
         });
-
-    }
+    };
     b();
   });
   var st;
   if (!ad) st = "cr";
 
   if (ad == "On") {
-    st = "ad2"
+    st = "ad2";
   } else if (ad == "Off") {
-    st = "cr"
+    st = "cr";
   }
   const handleClick = (year, exam_name) => {
     // console.log(year, exam_name);
@@ -51,9 +49,13 @@ export default function Year(props) {
       category: "Year_page",
       label: "Year Selected",
       value: "xxxxx",
-    })
+    });
     if (st == "cr") {
-      ReactGA.send({ hitType: "pageview", page: "/cr", title: "Credentials_Page" });
+      ReactGA.send({
+        hitType: "pageview",
+        page: "/cr",
+        title: "Credentials_Page",
+      });
     } else if (st == "ad2") {
       ReactGA.send({ hitType: "pageview", page: "/ad2", title: "Ad2" });
     }
@@ -133,27 +135,34 @@ export default function Year(props) {
           let _year = a["year"];
           let _sem = a["exam_name"];
           let _date = formatDate(a["date"]);
-          if (newDates.length < 1) {
-            max = countDiff(_date);
-            newDates.push([_date, _year, _sem]);
-          }
           // count the differnce btw dates
           const diffBtwDates = countDiff(_date);
 
+          if (newDates.length < 1) {
+            max = countDiff(_date);
+
+            if (diffBtwDates < 30) {
+              newDates.push([_date, _year, _sem, diffBtwDates]);
+            }
+          }
+
           // get the latest result information
-          if (diffBtwDates < max) {
-            newDates[0] = [_date, _year, _sem];
+          if (diffBtwDates < max && diffBtwDates < 30) {
+            newDates[0] = [_date, _year, _sem, diffBtwDates];
             max = diffBtwDates;
           }
           // push all result information to oldDates array
-          oldDates.push([_date, _year, _sem]);
+          oldDates.push([_date, _year, _sem, diffBtwDates]);
         }
 
+        console.log(newDates);
+        console.log(oldDates);
         // set old and new result informtion in the states
         setNewResult(newDates[0]);
         setOldResult(removeDuplicates(oldDates));
       });
   }, []);
+  console.log(newResult);
   const [show, setShow] = useState(false);
   return (
     <div className="year_main">
@@ -181,21 +190,22 @@ export default function Year(props) {
             <div className="resultBtn latest">
               <span style={{ display: "none" }}>{(i = 0)}</span>
               {/* {newResult.map((d) => ( */}
-              <button
-                id="but_year"
-                className="card"
-                value={newResult[1]}
-                onClick={() => {
-                  handleClick(newResult[1], newResult[2]);
-                }}
-                key={i++}
-              >
-                <span> {newResult[1]}</span>
-                <span> {newResult[2]}</span>
-                {/* <span>
-            <b>Date :</b> {newResult[0]}
-          </span> */}
-              </button>
+              {!newResult ? (
+                <div style={{ color: "grey" }}>No Result Available</div>
+              ) : (
+                <button
+                  id="but_year"
+                  className="card"
+                  value={newResult[1]}
+                  onClick={() => {
+                    handleClick(newResult[1], newResult[2]);
+                  }}
+                  key={i++}
+                >
+                  <span> {newResult[1]}</span>
+                  <span> {newResult[2]}</span>
+                </button>
+              )}
               {/* ))} */}
             </div>
           </div>
@@ -212,9 +222,12 @@ export default function Year(props) {
                 data-aos-duration="100"
               >
                 {oldResult.map((d) =>
+                  newResult &&
                   d[0] === newResult[0] &&
-                    d[1] === newResult[1] &&
-                    d[2] === newResult[2] ? (
+                  newResult &&
+                  d[1] === newResult[1] &&
+                  newResult &&
+                  d[2] === newResult[2] ? (
                     oldResult.length <= 1 ? (
                       <div style={{ color: "grey" }}>No Result Available</div>
                     ) : null

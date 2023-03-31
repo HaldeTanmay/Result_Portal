@@ -365,7 +365,7 @@
 
 .oldest{
   display: flex;
-  width: 60%;
+  /* width: 60%; */
   flex-wrap: wrap;
   justify-content: space-around;
 }

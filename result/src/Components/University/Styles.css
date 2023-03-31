@@ -114,6 +114,23 @@
     transform: scaleX(1);
   }
 
+  @font-face {
+    font-family: cirle;
+    src: url("../../Comp_css/CircularStd-Light.otf");
+  }
+  
+  .university_card #msg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 3rem;
+    font-family: cirle;
+    font-weight: 900;
+    color: #939393;
+    overflow: hidden;
+  }
+
   /* spinner  */
   .spinner{
     position: absolute;

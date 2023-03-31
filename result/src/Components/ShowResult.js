@@ -1,11 +1,14 @@
 import React from "react";
 import ResultWindow from "./ResultWindow";
+import Accordian from "./Accordian";
 import Pdf from "react-to-pdf";
 import { ThreeCircles } from "react-loader-spinner";
 import "../Comp_css/Result.css";
 import LocalPrintshopIcon from "@material-ui/icons/LocalPrintshop";
 import QRCode from "react-qr-code";
 import WarningIcon from "@material-ui/icons/Warning";
+import { Accordion } from "@material-ui/core";
+
 
 // import Card from './Card';
 // import { useCallback } from "react";
@@ -30,7 +33,7 @@ class ShowResult extends React.Component {
       roll: props.roll,
       logo: "",
       disclaimer: "",
-      byRollingNotes:false,
+      byRollingNotes: false,
     };
     this.updateClass = this.updateClass.bind(this);
   }
@@ -76,12 +79,12 @@ class ShowResult extends React.Component {
     // getUniversityLogo();
   }
 
-  updateClass(){
+  updateClass() {
     var current = this.state.byRollingNotes;
-    this.setState({byRollingNotes:!current})
-  } 
+    this.setState({ byRollingNotes: !current })
+  }
 
-  
+
   render(props) {
     const ref = React.createRef();
 
@@ -120,6 +123,11 @@ class ShowResult extends React.Component {
         //   <h1> wait some time.... </h1>{" "}
         // </div>
       );
+
+
+    // const hashedPassword = bcrypt.hash(name, 12)
+    // console.log(hashedPassword);
+
 
     return (
       <div className="showresult_main">
@@ -264,7 +272,10 @@ class ShowResult extends React.Component {
             )}
           </Pdf>
         </div>
+        <div>
+        </div>
       </div>
+
     );
   }
 }

@@ -53,12 +53,12 @@
   }
 }
 .status_container {
+  font-family: AllText,sans-serif;
   height: fit-content;
   width: 65%;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   border-radius: 12px;
   margin-top: 1rem;
-  backdrop-filter: blur(5px);
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -117,8 +117,9 @@
     border-bottom-right-radius: 4rem;
   }
   .status_container {
-    background-color: #fff;
+    background-color: #f7f7f7;
     padding: 70px 0;
+    font-size: 1.2rem;
   }
 }
 

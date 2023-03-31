@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./menu.css";
-import LinkInfo from "./LinkInfo";
-// import LinkInfo from "../footerSection/LinkInfo";
-import { MdOutlineAddBox } from "react-icons/md";
+import { motion } from 'framer-motion'
 import Add from "./Add";
+import LinkInfo from "./LinkInfo";
 import Navbar from "../HomePage/Hamburger/NavigationMenu";
+import "./menu.css";
 
 const Menu = () => {
   // const [name]
@@ -29,7 +28,11 @@ const Menu = () => {
     <Navbar />
     <div className="menuContainer">
       <div className="top">Menu Control</div>
-      <div className="menuSubcontainer">
+      <motion.div 
+        animate={{ y: [30, 0], opacity: [0.6, 1] }}
+        transition={{ type: "spring", duration: 3 }}
+        className="menuSubcontainer"
+      >
         <div className="left">Menu</div>
         <div className="right">
           <div className="main">
@@ -57,7 +60,7 @@ const Menu = () => {
             <button onClick={() => setAdd(!add)}>Add</button>
           </div>
         </div>
-      </div>
+      </motion.div>
       {add ? <Add setAdd={setAdd} getAllMenus={getAllMenus} /> : null}
     </div>
     </>

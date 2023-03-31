@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { storage } from "../firebase.config";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-import "./uploadImg.css";
-import Navbar from "../HomePage/Hamburger/NavigationMenu";
 import TextField from "@mui/material/TextField";
 import { MenuItem, Select } from "@mui/material";
+import { motion }  from 'framer-motion'
+
+import Navbar from "../HomePage/Hamburger/NavigationMenu";
+import "./uploadImg.css";
 
 // const state = ["Maharaastra", "Pune"];
 // const collegeNames = ["SLRTCE", "Athrva"];
@@ -112,7 +114,11 @@ function UploadImage() {
         <div className="ad_control_label" style={{ marginBottom: "5rem" }}>
           Logo Control
         </div>
-        <form className="form" onSubmit={handleSubmit}>
+        <motion.form 
+            animate={{ y: [30, 0], opacity: [0.6, 1] }}
+            transition={{ type: "spring", duration: 3 }}
+          className="form" 
+          onSubmit={handleSubmit}>
           <div className="textfield_container">
             <div className="state_college_container">
               <div className="stateName gap">
@@ -248,7 +254,7 @@ function UploadImage() {
               </div>
             )} */}
           </div>
-        </form>
+        </motion.form>
       </div>
     </>
   );

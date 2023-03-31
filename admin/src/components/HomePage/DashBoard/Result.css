@@ -28,10 +28,16 @@
     height: 100%;
     /* color: #329d52; */
     /* color: #3A1078; */
-    background: -webkit-linear-gradient(45deg,#3A1078, #810CA8,#C147E9,#E5B8F4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 0vw #dcdcdc;
+    background: -webkit-linear-gradient(
+        45deg,
+        #0c0050,
+        #0258c9,
+        #21a6e4,
+        #68f3fd
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 0vw #dcdcdc;
     overflow: hidden;
     animation: animate1 1.5s linear;
 }
@@ -67,8 +73,8 @@
     text-transform: capitalize;
  }
  .app_subHeading>span{
-    font-family: "Poppins" !important;
-    font-weight: 900;
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 900 !important;
      background: -webkit-linear-gradient(90deg,#ff40e2 0%, #63dcff 100%);
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;

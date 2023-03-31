@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import Lottie from "react-lottie";
 import ReactGA from "react-ga4";
-import Enquiry from '../Components/Footer';
+import toast, { Toaster } from 'react-hot-toast';
 
+import Enquiry from '../Components/Footer';
 import "../Comp_css/Credential.css";
 // import ChoiceSem from "./Semester/ChoiceSem";
 // import { Input, Card } from "antd";
@@ -84,7 +84,7 @@ export default function Credentials(props) {
     );
 
     if (res.status === 400 || !data) {
-      window.alert("Invalid  Credentials");
+      toast.error('Invalid  Credentials Try Again')
       console.log("Invalid  Credentials");
       ReactGA.event({
         action: "Button clicked",
@@ -323,6 +323,7 @@ export default function Credentials(props) {
           </form>
         </div>
       </div>
+      <Toaster/>
       <Enquiry />
     </div>
   );

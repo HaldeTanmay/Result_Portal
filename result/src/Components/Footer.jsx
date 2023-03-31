@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
-import "../Comp_css/Footer.css";
-import NavigationMenu from "./HomePage/Hamburger/NavigationMenu";
 import { FiPhone } from "react-icons/fi";
 import { AiOutlineMail, AiFillYoutube } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import { BsTwitter, BsPinterest, BsWhatsapp } from "react-icons/bs";
+
+
 import playStore from "../assets/footer/playStore.png";
 import amezon from "../assets/footer/amezon.png";
+import NavigationMenu from "./HomePage/Hamburger/NavigationMenu";
+import "../Comp_css/Footer.css";
 
 const Enquiry = () => {
   const [links, setLinks] = useState([]);

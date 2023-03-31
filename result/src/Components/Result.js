@@ -2,6 +2,8 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
+
+import Navigation from './HomePage/Hamburger/NavigationMenu'
 import ShowResult from "./ShowResult";
 
 export default function Result() {
@@ -9,6 +11,7 @@ export default function Result() {
   const location = useLocation();
   return (
     <div className="result_main_background">
+      <Navigation/>
       <div className="result_main">
         {/* <div className="result_label_main">
           <h1>Result</h1>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import LinkInfo from "./LinkInfo";
+import { motion } from 'framer-motion'
 import { MdOutlineAddBox } from "react-icons/md";
 import Add from "./Add";
 
@@ -34,7 +35,11 @@ const Footer = () => {
     <div className="footerContainer">
       <Navigation />
       <div className="top">Footer Control</div>
-      <div className="footerSubcontainer">
+      <motion.div 
+        animate={{ y: [30, 0], opacity: [0.6, 1] }}
+        transition={{ type: "spring", duration: 3 }}
+        className="footerSubcontainer"
+        >
         <div className="left">
           <div
             className={`info type1Info ${select === "type1" ? "active" : null}`}
@@ -81,7 +86,7 @@ const Footer = () => {
             <button onClick={() => setAdd(!add)}>Add</button>
           </div>
         </div>
-      </div>
+      </motion.div>
       {add ? (
         <Add
           // getAllLinks={select === "type1" ? getType1Info : getType2Info}

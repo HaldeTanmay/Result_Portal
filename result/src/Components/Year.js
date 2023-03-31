@@ -240,6 +240,7 @@ export default function Year(props) {
           </div>
         </section>
       </motion.div>
+      <Enquiry/>
     </div>
   );
 }

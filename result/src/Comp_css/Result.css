@@ -474,3 +474,25 @@
     border-bottom-right-radius: 4rem;
   }
 }
+
+ /* by rolling notes  */
+
+ .app_byRollingNotes_before{
+  display: flex;
+  justify-content: right;
+  color: white;
+ }
+ .app_byRollingNotes_after{
+  display: flex;
+  justify-content: right;
+  color: blue;
+  /* background: -webkit-linear-gradient(
+    45deg,
+    #0c0050,
+    #0258c9,
+    #FF8C00,
+    #0066ff
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+ }

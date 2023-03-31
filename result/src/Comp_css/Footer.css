@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Loved+by+the+King&family=Poppins:wght@900&display=swap');
 
 .footer_main{
-    border-top-left-radius: 125px;
-    bottom: 0;
+    position: absolute;
+    bottom: -55%;
+    margin-top: 5rem;
     padding: 0 11vw;
-    padding-top: 70px;
-    background: linear-gradient(to left, #0066ff,#004e92);
+   padding-top: 70px;
+   overflow: hidden;
+   font-family: AllText,sans-sarif;
+   background: linear-gradient(to left, #0066ff,#004e92);
+   border-top-left-radius: 7.8rem;
 }
 
 .foot_cont{
@@ -68,7 +72,7 @@ i{
 .footer-col h3{
     text-transform: uppercase;
     font-size: 1rem;
-    color: #bebebe;
+    color: #fff;
     margin-bottom: 30px;
     font-weight: 700;
     font-family:'Circular';
@@ -372,5 +376,10 @@ padding: 5px;
 
     #logoContainer img {
         width: 8vw;
+    }
+}
+@media screen and (max-width:500px) {
+    .footer_main{
+        top: 85%;
     }
 }

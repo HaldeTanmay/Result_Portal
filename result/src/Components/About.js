@@ -127,10 +127,12 @@ const About = () => {
                 Bachelor of Engineering in Information Technology
               </p>
               <br />
+              <br />
               <p>
                 I am just a student who's aim is to just explore new
                 technologies and gain knowledge from it as much as possible
               </p>
+              <br />
               <br />
               <p className="someone">tanmayhalde27@gmail.com</p>
               <br />
@@ -151,10 +153,13 @@ const About = () => {
                 Bachelor of Engineering in Computer Science and Engineering
               </p>
               <br />
+              <br />
               <p>
                 Hi, I am a web developer with experience and great skills and I
                 am open to collab on projects.
               </p>
+              <br />
+              <br />
               <br />
               <p className="someone">singhparmeet171@gmail.com</p>
               <br />
@@ -174,6 +179,7 @@ const About = () => {
               <p className="noone">
                 Bachelor of Engineering in Computer Science and Engineering
               </p>
+              <br />
               <br />
               <p>
                 A passionate Web developer eager to learn and develope new
@@ -197,10 +203,14 @@ const About = () => {
                 Bachelor of Engineering in Information Technology
               </p>
               <br />
+              <br />
+              <br />
               <p>
                 Programming enthusiastic | web developer | competitive
                 programmer
               </p>
+              <br />
+              <br />
               <br />
               <p className="someone">adityawaskar03@gmail.com</p>
               <br />

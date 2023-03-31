@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ReactSwitch from "react-switch";
+import Switch from "@mui/material/Switch";
+import { motion } from 'framer-motion'
+
+
 import Navbar from "../HomePage/Hamburger/NavigationMenu";
 import "./AdStatus.css";
-import Switch from "@mui/material/Switch";
 
 function AdStatus() {
   // const [ad, setAd] = useState("");
@@ -144,7 +147,11 @@ function AdStatus() {
 
       <div className="status_container_main" style={{ textAlign: "center" }}>
         <div className="ad_control_label">AD Control</div>
-        <div className="status_container">
+        <motion.div 
+           animate={{ y: [30, 0], opacity: [0.6, 1] }}
+           transition={{ type: "spring", duration: 3 }}
+           className="status_container"
+           >
           <h2 style={{ color: "#053885" }}>Turn ON/OFF the advertisement</h2>
           <br />
           <div>
@@ -181,7 +188,7 @@ function AdStatus() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );

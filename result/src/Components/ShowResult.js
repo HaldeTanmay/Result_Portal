@@ -30,7 +30,9 @@ class ShowResult extends React.Component {
       roll: props.roll,
       logo: "",
       disclaimer: "",
+      byRollingNotes:false,
     };
+    this.updateClass = this.updateClass.bind(this);
   }
 
   componentDidMount() {
@@ -74,6 +76,12 @@ class ShowResult extends React.Component {
     // getUniversityLogo();
   }
 
+  updateClass(){
+    var current = this.state.byRollingNotes;
+    this.setState({byRollingNotes:!current})
+  } 
+
+  
   render(props) {
     const ref = React.createRef();
 

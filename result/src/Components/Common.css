@@ -60,7 +60,7 @@
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     border-radius: 12px;
     margin-top: 1rem;
-    backdrop-filter: blur(5px);
+    /* backdrop-filter: blur(5px); */
 }
 .state_scroll{
  padding-top: 2rem;
@@ -99,4 +99,5 @@
             border-bottom-right-radius: 4rem;
             
         }
+      
 }

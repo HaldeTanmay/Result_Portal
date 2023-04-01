@@ -5,6 +5,7 @@
 body {
     background-color: #e0e3e8;
     font-family: AllText, sans-serif;
+    overflow: hidden; 
 }
 
 a, a:hover, a:focus {

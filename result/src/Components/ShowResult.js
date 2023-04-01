@@ -251,6 +251,7 @@ class ShowResult extends React.Component {
                 </marquee> */}
               </div>
             </div>
+                <p className="app_byRollingNotes_after">by Rollingnotes</p>
           </div>
           {/* <button className='print_button' onClick={this.generateSimplePDF}>Print</button> */}
           <Pdf targetRef={ref} filename="Result.pdf" y={4} x={18} scale={0.8}>

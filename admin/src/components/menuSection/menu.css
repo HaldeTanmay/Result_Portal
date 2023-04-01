@@ -91,6 +91,13 @@
     font-weight: 700;
 }
 
+.menuSubcontainer .left button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: AllText,sans-serif;
+    font-size: 1rem;
+}
 
 .menuSubcontainer .right{
     flex: 3;
@@ -245,15 +252,7 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 850px) {
-    .menuContainer {
-      background: url("../../Images/backgroundTab.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-    }
-    
-}
+
 @media screen and (max-width: 1024px) {
     .menuContainer .top {
       font-size: 1.5rem;
@@ -263,6 +262,7 @@
       border-bottom-right-radius: 4rem;
     }
 }
+
 @media screen and (max-width: 1000px) {
     .menuContainer .menuSubcontainer{
         margin-top: 10rem !important;
@@ -274,7 +274,40 @@
     .addBtn {
         margin-top: 20px;
     }
+    .menuSubcontainer .left{
+        background-color: transparent;
+      }
+    .menuSubcontainer .left button{
+        /* background-color: transparent; */
+        position: relative;
+        background: #fff;
+        width: 70%;
+        height: 4rem;
+        font-family: AllText;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border: none;
+        color: #0066ff;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgb(191 191 191 / 50%);
+        z-index: 1;
+      }
 }
+
+@media screen and (max-width: 850px) {
+    .menuContainer {
+      background: url("../../Images/backgroundTab.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  
+    
+}
+
 @media screen and (max-width: 500px) {
     .menuContainer .menuSubcontainer{
         width: 85%;

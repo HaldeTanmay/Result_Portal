@@ -2,17 +2,12 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import ReactGA from "react-ga4";
-
 import Navigation from './HomePage/Hamburger/NavigationMenu'
 import ShowResult from "./ShowResult";
-import Accordian from "./Accordian";
 
 export default function Result() {
   ReactGA.send({ hitType: "pageview", page: "/result", title: "Result_Page" });
   const location = useLocation();
-  const st = {
-    display: 'none'
-  }
   return (
     <div className="result_main_background">
       <Navigation />

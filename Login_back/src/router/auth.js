@@ -96,7 +96,7 @@ router.get("/cr/:s_name/:un_name/:dp_name/:year/:sem", async (req, res) => {
     res.send(e);
   }
 });
-router.get("/cr/:s_name/:un_name/:dp_name/:sem/:year/1", async (req, res) => {
+router.get("/cr/:s_name/:un_name/:dp_name/:sem/:year/:exam_name/1", async (req, res) => {
   try {
     const data = await UserModel.find({
       state: req.params.s_name,
@@ -104,6 +104,7 @@ router.get("/cr/:s_name/:un_name/:dp_name/:sem/:year/1", async (req, res) => {
       dp_name: req.params.dp_name,
       sem: req.params.sem,
       year: req.params.year,
+      exam_name: req.params.exam_name
     });
     res.send(data);
   } catch (e) {
@@ -112,7 +113,7 @@ router.get("/cr/:s_name/:un_name/:dp_name/:sem/:year/1", async (req, res) => {
 });
 
 router.get(
-  "/cr/:s_name/:un_name/:dp_name/:exam_name/:year/:sem/:roll",
+  "/cre/:s_name/:un_name/:dp_name/:exam_name/:year/:sem/:roll",
   async (req, res) => {
     try {
       const data = await UserModel.distinct("name", {

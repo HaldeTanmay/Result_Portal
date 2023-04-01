@@ -44,7 +44,7 @@ export default function Credentials(props) {
   const sem = location.state.sem;
   const year = location.state.year;
   const exam_name = location.state.exam_name;
-  console.log(exam_name);
+  // console.log(exam_name);
   const [name, setName] = useState("");
   const [nameMatch, setNameMatch] = useState([]);
   // const [exam_name, setExam_name] = useState("");
@@ -125,7 +125,7 @@ export default function Credentials(props) {
     var roll = e.target.value;
     console.log(roll);
     fetch(
-      `http://localhost:4000/cr/${s_name}/${un_name}/${dp_name}/${exam_name}/${year}/${sem}/${roll}`,
+      `http://localhost:4000/cre/${s_name}/${un_name}/${dp_name}/${exam_name}/${year}/${sem}/${roll}`,
       { params: { s_name, un_name, dp_name, exam_name, year, sem, roll } }
     )
       .then((res) => res.json())
@@ -153,8 +153,8 @@ export default function Credentials(props) {
   }, []);
   useEffect(() => {
     fetch(
-      `http://localhost:4000/cr/${s_name}/${un_name}/${dp_name}/${sem}/${year}/1`,
-      { params: { s_name, un_name, dp_name, sem, year } }
+      `http://localhost:4000/cr/${s_name}/${un_name}/${dp_name}/${sem}/${year}/${exam_name}/1`,
+      { params: { s_name, un_name, dp_name, sem, year, exam_name } }
     )
       .then((res) => res.json())
       .then((json) => {
@@ -164,10 +164,10 @@ export default function Credentials(props) {
         );
       });
   }, []);
-  console.log(names);
+  // console.log(names);
   const searchName = (text) => {
-    console.log(text);
-    console.log(text.length);
+    // console.log(text);
+    // console.log(text.length);
     if (text.length >= 3) {
       let matches = names.filter((item1, index) => {
         const regex = new RegExp(`^${text}|(?<=\\s)${text}`, "gi");
@@ -176,8 +176,8 @@ export default function Credentials(props) {
       });
 
       setNameMatch(matches);
-      console.log(nameMatch);
-      console.log(matches);
+      // console.log(nameMatch);
+      // console.log(matches);
     } else {
       setNameMatch(null);
     }
@@ -189,7 +189,7 @@ export default function Credentials(props) {
     setName(text);
     setRoll(roll);
     var name = text;
-    console.log(name);
+    // console.log(name);
     // fetch(
     //   `http://localhost:4000/cr/${s_name}/${un_name}/${dp_name}/${exam_name}/${year}/${sem}/${name}/dept/hel`,
     //   { params: { s_name, un_name, dp_name, exam_name, year, sem, name } }
@@ -323,7 +323,7 @@ export default function Credentials(props) {
           </form>
         </div>
       </div>
-      <Toaster/>
+      <Toaster />
       <Enquiry />
     </div>
   );

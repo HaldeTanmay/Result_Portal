@@ -2,7 +2,7 @@
 
 .footer_main{
     position: absolute;
-    bottom: -55%;
+    bottom: -63%;
     margin-top: 5rem;
     padding: 0 11vw;
    padding-top: 70px;
@@ -10,6 +10,7 @@
    font-family: AllText,sans-sarif;
    background: linear-gradient(to left, #0066ff,#004e92);
    border-top-left-radius: 7.8rem;
+   /* margin-top: 4rem; */
 }
 
 .foot_cont{
@@ -71,6 +72,7 @@ i{
 
 .footer-col h3{
     text-transform: uppercase;
+    font-family: AllText,snas-serif !important;
     font-size: 1rem;
     color: #fff;
     margin-bottom: 30px;
@@ -323,8 +325,16 @@ padding: 5px;
         width: 5vw;
     }
 }
+@media screen and (max-width:850px){
+    .footer_main{
+        bottom: -60%;
+    }
+}
 
 @media screen and (max-width: 720px) {
+    .footer_main{
+        top: 85%;
+    }
     .top {
         flex-direction: column;
     }

@@ -1,6 +1,6 @@
 {
   "name": "admin",
-  "homepage": "https://parinaamAdmin.rollingnotes.in/",
+  "homepage": "https://admin.rollingnotes.in/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

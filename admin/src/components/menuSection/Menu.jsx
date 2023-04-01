@@ -33,7 +33,8 @@ const Menu = () => {
         transition={{ type: "spring", duration: 3 }}
         className="menuSubcontainer"
       >
-        <div className="left">Menu</div>
+        <div className="left">
+          <button>Menu</button></div>
         <div className="right">
           <div className="main">
             <div className="row header">

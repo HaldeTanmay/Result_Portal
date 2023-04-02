@@ -95,7 +95,7 @@ const About = () => {
             <div className="about_us_card">
               <div className="about_us_card_heading">
                 <img src={photo} alt="circle-image" />
-                <h3>Ankita mam</h3>
+                <h3>Ankita Jain</h3>
               </div>
               <p className="noone">CEO & Founder</p>
               <br />

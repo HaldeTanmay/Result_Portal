@@ -6,10 +6,6 @@
 }
 
 .home_sidebar_links_container_Link { 
-  /* display: flex;
-  flex-direction: column;
-  justify-content:left;
-  align-items: flex-start; */
     padding: 1rem 1rem;
     color: #1b1b1b;
     color: #0066ff;
@@ -24,7 +20,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-left: 1rem;
+    margin-right: 2rem;
   }
 .home_sidebar_links_container_Link div svg{ 
    margin-right: 1rem;

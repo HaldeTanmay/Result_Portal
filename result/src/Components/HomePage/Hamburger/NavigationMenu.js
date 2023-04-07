@@ -62,7 +62,7 @@ const Ul = styled.ul`
   top: 0;
   right: 0;
   height: 100vh;
-  width: 300px;
+  width: 230px;
   padding-top: 5rem;
   display: flex;
   align-items: center;

@@ -30,7 +30,7 @@ const Result = () => {
       </div>
 
       <p className="app_subHeading">
-        by <span className="app_rollingNotes"><a  href="https:  -//rollingnotes.in/" target="_blank">RollingNotes</a></span>
+        by <span className="app_rollingNotes"><a href="https://rollingnotes.in/" target="_blank">RollingNotes</a></span>
       </p>
 
       <div className="app_button">

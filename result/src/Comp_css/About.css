@@ -170,6 +170,26 @@
   align-items: center;
 }
 
+.about_card_social_container {
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+.about_card_social_logo {
+  background-color: #fff;
+  margin-right: 10px;
+  /* padding: 5px; */
+  border: 1px solid #006eff;
+  color: #006eff;
+  border-radius: 50%;
+  padding: 5px 5px 2px 5px;
+  box-shadow: 0 0 5px 0px #c0c0c0;
+
+}
+.about_card_social_logo:hover {
+  background-color: #006eff;
+  color: #fff;
+}
 @media only screen and (max-width: 1800px) {
   .about_section_heading {
     padding: 0px 0 0 70px;

@@ -10,6 +10,12 @@ import ankush from "../Images/profile_img/ankush.jpeg";
 import ruchika from "../Images/profile_img/ruchika.jpeg";
 import parmeet from "../Images/profile_img/parmeet.png";
 import NavigationMenu from "./HomePage/Hamburger/NavigationMenu";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import LinkedinIcon from "@material-ui/icons/LinkedIn";
+import GitHubIcon from "@material-ui/icons/GitHub";
+// import Rating from "@material-ui/core/Rating";
+import StarIcon from "@material-ui/icons/Star";
+import DescriptionIcon from "@material-ui/icons/Description";
 
 const About = () => {
   return (
@@ -31,8 +37,20 @@ const About = () => {
             <p>Lorem ipsum dolor, sit amet consectetur.</p>
             <br />
             <p style={{ color: "#FFCD00", fontSize: "20px" }}>
-              ★★★★★ &nbsp;{" "}
-              <span style={{ color: "#000", fontSize: "16px" }}>sit amet</span>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "10px",  }}
+              >
+                <div>
+                  <StarIcon style={{  marginRight: "5px"  }} />
+                  <StarIcon style={{  marginRight: "5px"  }} />
+                  <StarIcon style={{  marginRight: "5px"  }} />
+                  <StarIcon style={{  marginRight: "5px"  }} />
+                  <StarIcon style={{  marginRight: "5px"  }} />
+                </div>
+                <span style={{ color: "#000", fontSize: "16px", marginBottom: "8px" }}>
+                  sit amet
+                </span>
+              </div>
             </p>
           </div>
 
@@ -88,10 +106,25 @@ const About = () => {
               <br />
               <p className="someone">proident@exmaple.com</p>
               <br />
-              <a href="" target="__blank">
+              {/* <a href="" target="__blank">
                 <button>Contact</button>
-              </a>
+              </a> */}
+              <div className="about_card_social_container">
+                <a className="about_card_social_logo">
+                  <InstagramIcon fontSize="medium" />
+                </a>
+                <a className="about_card_social_logo">
+                  <LinkedinIcon fontSize="medium" />
+                </a>
+                <a className="about_card_social_logo">
+                  <GitHubIcon fontSize="medium" />
+                </a>
+                <a className="about_card_social_logo">
+                  <DescriptionIcon fontSize="medium" />
+                </a>
+              </div>
             </div>
+
             <div className="about_us_card">
               <div className="about_us_card_heading">
                 <img src={photo} alt="circle-image" />
@@ -106,12 +139,61 @@ const About = () => {
               <br />
               <p className="someone">proident@exmaple.com</p>
               <br />
-              <a href="" target="__blank">
-                <button>Contact</button>
-              </a>
+              <div className="about_card_social_container">
+                <a className="about_card_social_logo">
+                  <InstagramIcon fontSize="medium" />
+                </a>
+                <a className="about_card_social_logo">
+                  <LinkedinIcon fontSize="medium" />
+                </a>
+                <a className="about_card_social_logo">
+                  <GitHubIcon fontSize="medium" />
+                </a>
+                <a className="about_card_social_logo">
+                  <DescriptionIcon fontSize="medium" />
+                </a>
+              </div>
             </div>
           </div>
         </section>
+        <section className="textalign_center">
+          <div className="our_story_section_container">
+            {/* <p>Lorem ipsum dolor</p> */}
+            <h1>Meet the Technical Team</h1>
+          </div>
+          <div className="about_us_card_container core_team_background_color">
+            <div className="about_us_card">
+              <div className="about_us_card_heading">
+                <img src={photo} alt="circle-image" />
+                <h3>Yash Gupta</h3>
+              </div>
+              <p className="noone">Technical Head</p>
+              <br />
+              <p>
+                proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.
+              </p>
+              <br />
+              <p className="someone">abc@gmail.com</p>
+              <br />
+              <div className="about_card_social_container">
+                <a className="about_card_social_logo">
+                  <InstagramIcon fontSize="medium" />
+                </a>
+                <a className="about_card_social_logo">
+                  <LinkedinIcon fontSize="medium" />
+                </a>
+                <a className="about_card_social_logo">
+                  <GitHubIcon fontSize="medium" />
+                </a>
+                <a className="about_card_social_logo">
+                  <DescriptionIcon fontSize="medium" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="textalign_center">
           <div className="our_story_section_container">
             {/* <p>Lorem ipsum dolor</p> */}
@@ -136,12 +218,21 @@ const About = () => {
               <br />
               <p className="someone">tanmayhalde27@gmail.com</p>
               <br />
-              <a
-                href="https://drive.google.com/file/d/1iL1uFwg1N1Gsv_ZdUl112yWxe1q2Xypi/view?usp=share_link"
-                target="__blank"
-              >
-                <button>Contact</button>
-              </a>
+              <div className="about_card_social_container">
+                <a href="https://www.instagram.com/i_m_tanmay27/" className="about_card_social_logo">
+                  <InstagramIcon fontSize="medium" />
+                </a>
+                <a href="https://www.linkedin.com/mwlite/in/tanmay-halde-5910bb22a" className="about_card_social_logo">
+                  <LinkedinIcon fontSize="medium" />
+                </a>
+                <a href="https://github.com/HaldeTanmay" className="about_card_social_logo">
+                  <GitHubIcon fontSize="medium" />
+                </a>
+                <a href="https://drive.google.com/file/d/1iL1uFwg1N1Gsv_ZdUl112yWxe1q2Xypi/view?usp=share_link"
+                target="__blank" className="about_card_social_logo">
+                  <DescriptionIcon fontSize="medium" />
+                </a>
+              </div>
             </div>
 
             <div className="about_us_card">
@@ -163,12 +254,21 @@ const About = () => {
               <br />
               <p className="someone">singhparmeet171@gmail.com</p>
               <br />
-              <a
-                href="https://drive.google.com/file/d/1eY0EUa44m3f4Wx2b_e6bcW3Gzc9i6oX3/view"
-                target="__blank"
-              >
-                <button>Contact</button>
-              </a>
+              <div className="about_card_social_container">
+                <a href="https://www.instagram.com/_parmeet_singh_08/" className="about_card_social_logo">
+                  <InstagramIcon fontSize="medium" />
+                </a>
+                <a href="https://www.linkedin.com/in/parmeet-singh-4319b1230/" className="about_card_social_logo">
+                  <LinkedinIcon fontSize="medium" />
+                </a>
+                <a href="https://www.linkedin.com/in/parmeet-singh-4319b1230/" className="about_card_social_logo">
+                  <GitHubIcon fontSize="medium" />
+                </a>
+                <a href="https://drive.google.com/file/d/1eY0EUa44m3f4Wx2b_e6bcW3Gzc9i6oX3/view"
+                target="__blank" className="about_card_social_logo">
+                  <DescriptionIcon fontSize="medium" />
+                </a>
+              </div>
             </div>
 
             <div className="about_us_card">
@@ -189,9 +289,21 @@ const About = () => {
               <br />
               <p className="someone">mehraankush36@gmail.com</p>
               <br />
-              <a href="" target="__blank">
-                <button>Contact</button>
-              </a>
+              <div className="about_card_social_container">
+                <a href="https://instagram.com/mehra_69?igshid=ZDdkNTZiNTM=" className="about_card_social_logo">
+                  <InstagramIcon fontSize="medium" />
+                </a>
+                <a href="https://www.linkedin.com/in/ankush-mehra-9a57a1233" className="about_card_social_logo">
+                  <LinkedinIcon fontSize="medium" />
+                </a>
+                <a href="https://github.com/mehraankush" className="about_card_social_logo">
+                  <GitHubIcon fontSize="medium" />
+                </a>
+                <a href="https://drive.google.com/file/d/1Vd95T5caCJQ7LYVcrXCmjzp_7IrQV5E5/view?usp=drivesdk"
+                target="__blank" className="about_card_social_logo">
+                  <DescriptionIcon fontSize="medium" />
+                </a>
+              </div>
             </div>
 
             <div className="about_us_card">
@@ -214,13 +326,21 @@ const About = () => {
               <br />
               <p className="someone">adityawaskar03@gmail.com</p>
               <br />
-              <a
-                href="https://drive.google.com/file/d/1sZDf6dMgh_HhzflUlQz5EBXRSwM3W9xv/view?usp=share_link
-"
-                target="__blank"
-              >
-                <button>Contact</button>
-              </a>
+              <div className="about_card_social_container">
+                <a  className="about_card_social_logo">
+                  <InstagramIcon fontSize="medium" />
+                </a>
+                <a className="about_card_social_logo">
+                  <LinkedinIcon fontSize="medium" />
+                </a>
+                <a className="about_card_social_logo">
+                  <GitHubIcon fontSize="medium" />
+                </a>
+                <a href="https://drive.google.com/file/d/1sZDf6dMgh_HhzflUlQz5EBXRSwM3W9xv/view?usp=share_link"
+                target="__blank" className="about_card_social_logo">
+                  <DescriptionIcon fontSize="medium" />
+                </a>
+              </div>
             </div>
 
             <div className="about_us_card">
@@ -239,12 +359,21 @@ const About = () => {
               <br />
               <p className="someone">savrnkarruchika25@gmail.com</p>
               <br />
-              <a
-                href="https://drive.google.com/file/d/1YAt3qvwTirXPixKOLNvYzespDkLCYK7Q/view?usp=sharing"
-                target="__blank"
-              >
-                <button>Contact</button>
-              </a>
+              <div className="about_card_social_container">
+                <a  className="about_card_social_logo">
+                  <InstagramIcon fontSize="medium" />
+                </a>
+                <a className="about_card_social_logo">
+                  <LinkedinIcon fontSize="medium" />
+                </a>
+                <a className="about_card_social_logo">
+                  <GitHubIcon fontSize="medium" />
+                </a>
+                <a href="https://drive.google.com/file/d/1YAt3qvwTirXPixKOLNvYzespDkLCYK7Q/view?usp=sharing"
+                target="__blank" className="about_card_social_logo">
+                  <DescriptionIcon fontSize="medium" />
+                </a>
+              </div>
             </div>
           </div>
         </section>

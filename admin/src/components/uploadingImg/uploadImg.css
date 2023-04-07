@@ -130,6 +130,9 @@
   }
 }
 @media screen and (max-width: 500px) {
+  .UploadImageContainer {
+    height: 200vw;
+  }
   .form {
     width: 90%;
     padding: 50px 0;
@@ -137,5 +140,10 @@
   .state_college_container {
     flex-direction: column;
     gap: 0;
+  }
+}
+@media screen and (max-width: 450px) {
+  .UploadImageContainer {
+    height: 300vw;
   }
 }

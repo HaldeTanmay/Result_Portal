@@ -3,13 +3,22 @@ import { storage } from "../firebase.config";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import TextField from "@mui/material/TextField";
 import { MenuItem, Select } from "@mui/material";
-import { motion }  from 'framer-motion'
+import { motion } from "framer-motion";
 
 import Navbar from "../HomePage/Hamburger/NavigationMenu";
 import "./uploadImg.css";
 
-// const state = ["Maharaastra", "Pune"];
-// const collegeNames = ["SLRTCE", "Athrva"];
+const romanToInt = {
+  I: 1,
+  II: 2,
+  III: 3,
+  IV: 4,
+  v: 5,
+  VI: 6,
+  VII: 7,
+  VIII: 8,
+};
+
 function UploadImage() {
   const [stateList, setStateList] = useState([]);
   const [collegeNameList, setCollegeNameList] = useState(["Select"]);
@@ -17,8 +26,12 @@ function UploadImage() {
   const [progresspercent, setProgresspercent] = useState(0);
   const [filePath, setFilePath] = useState(null);
   const [disclaimer, setDisclaimer] = useState("");
-  const [stateName, setStateName] = useState("Select");
-  const [collegeName, setCollegeName] = useState("Select");
+  const [stateName, setStateName] = useState(["Select"]);
+  const [collegeName, setCollegeName] = useState(["Select"]);
+  const [AllSem, SetAllSem] = useState(["Select"]);
+  const [sem, setSem] = useState(AllSem[0]);
+  const [departmentList, setdepartmentList] = useState(["Select"]);
+  const [department, setdepartment] = useState(departmentList[0]);
 
   const clearStates = () => {
     setCollegeNameList(["Select"]);
@@ -26,8 +39,14 @@ function UploadImage() {
     setProgresspercent(0);
     setFilePath(null);
     setDisclaimer("");
-    setStateName("Select");
-    setCollegeName("Select");
+    // setStateList(["Select"]);
+    setStateName(stateList[0]);
+    setCollegeNameList(["Select"]);
+    setCollegeName(collegeNameList[0]);
+    SetAllSem(["Select"]);
+    setSem(AllSem[0]);
+    setdepartmentList(["Select"]);
+    setdepartment(departmentList[0]);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,7 +69,6 @@ function UploadImage() {
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          // console.log(collegeName, stateName, downloadURL);
           setImgUrl(downloadURL);
           sendToDatabase(downloadURL);
         });
@@ -60,10 +78,12 @@ function UploadImage() {
   const sendToDatabase = async (downloadURL) => {
     console.log(
       JSON.stringify({
-        collegeName,
-        stateName,
-        downloadURL,
-        disclaimer,
+        un_name: collegeName,
+        state: stateName,
+        department: department,
+        sem: romanToInt[sem],
+        logo: downloadURL,
+        disclaimer: disclaimer,
       })
     );
     const res = await fetch("http://localhost:4000/admin/upload", {
@@ -74,6 +94,8 @@ function UploadImage() {
       body: JSON.stringify({
         un_name: collegeName,
         state: stateName,
+        department: department,
+        sem: romanToInt[sem],
         logo: downloadURL,
         disclaimer: disclaimer,
       }),
@@ -96,6 +118,32 @@ function UploadImage() {
       });
   };
 
+  const getALLDepartment = (e) => {
+    setCollegeName(e.target.value);
+    fetch(
+      `http://localhost:4000/allUniversities/${stateName}/${e.target.value}`
+    )
+      .then((res) => res.json())
+      .then((json) => {
+        let data = ["Select", ...json];
+        setdepartmentList(data);
+        console.log(json);
+      });
+  };
+
+  const getAllSem = (e) => {
+    setdepartment(e.target.value);
+    fetch(
+      `http://localhost:4000/allUniversities/${stateName}/${collegeName}/${e.target.value}`
+    )
+      .then((res) => res.json())
+      .then((json) => {
+        let data = ["Select", ...json];
+        SetAllSem(data);
+        console.log(json);
+      });
+  };
+
   useEffect(() => {
     fetch(`http://localhost:4000/allStates`)
       .then((res) => res.json())
@@ -114,11 +162,12 @@ function UploadImage() {
         <div className="ad_control_label" style={{ marginBottom: "5rem" }}>
           Logo Control
         </div>
-        <motion.form 
-            animate={{ y: [30, 0], opacity: [0.6, 1] }}
-            transition={{ type: "spring", duration: 3 }}
-          className="form" 
-          onSubmit={handleSubmit}>
+        <motion.form
+          animate={{ y: [30, 0], opacity: [0.6, 1] }}
+          transition={{ type: "spring", duration: 3 }}
+          className="form"
+          onSubmit={handleSubmit}
+        >
           <div className="textfield_container">
             <div className="state_college_container">
               <div className="stateName gap">
@@ -143,37 +192,9 @@ function UploadImage() {
                     </MenuItem>
                   ))}
                 </TextField>
-
-                {/* <label> State Name</label>
-              <select
-                name="states"
-                id="states"
-                value={stateName}
-                onChange={getAllColleges}
-                onChange={(e) => setStateName(e.target.value)}
-              >
-                {stateList.map((d) => (
-                  <option value={d} key={d}>
-                    {d}
-                  </option>
-                ))}
-              </select> */}
               </div>
 
               <div className="collegeName gap">
-                {/* <label> College Name</label>
-              <select
-                name="collegeNames"
-                id="collegeNames"
-                value={collegeName}
-                onChange={(e) => setCollegeName(e.target.value)}
-              >
-                {collegeNameList.map((d) => (
-                  <option value={d} key={d}>
-                    {d}
-                  </option>
-                ))}
-              </select> */}
                 <TextField
                   // id="filled-basic"
                   select
@@ -181,14 +202,48 @@ function UploadImage() {
                   name="collegeNames"
                   id="collegeNames"
                   value={collegeName}
-                  onChange={(e) => setCollegeName(e.target.value)}
+                  onChange={getALLDepartment}
                   variant="filled"
                   style={{ width: "100%", textAlign: "left" }}
                 >
                   {collegeNameList.map((d) => (
-                    // <option value={d} key={d}>
-                    //   {d}
-                    // </option>
+                    <MenuItem value={d} key={d}>
+                      {d}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </div>
+              <div className="departmentName gap">
+                <TextField
+                  // id="filled-basic"
+                  select
+                  label="Department Name"
+                  name="departmentNames"
+                  id="departmentNames"
+                  value={department}
+                  onChange={getAllSem}
+                  variant="filled"
+                  style={{ width: "100%", textAlign: "left" }}
+                >
+                  {departmentList.map((d) => (
+                    <MenuItem value={d} key={d}>
+                      {d}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </div>
+              <div className="SemName gap">
+                <TextField
+                  select
+                  label="Semester"
+                  name="Semesters"
+                  id="Semesters"
+                  value={sem}
+                  onChange={(e) => setSem(e.target.value)}
+                  variant="filled"
+                  style={{ width: "100%", textAlign: "left" }}
+                >
+                  {AllSem.map((d) => (
                     <MenuItem value={d} key={d}>
                       {d}
                     </MenuItem>

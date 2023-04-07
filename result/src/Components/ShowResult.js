@@ -48,14 +48,19 @@ class ShowResult extends React.Component {
     )
       .then((res) => res.json())
       .then((json) => {
+        console.log(json[0]);
         this.setState({
           items: json[0],
           DataisLoaded: true,
         });
       });
-    fetch(`http://localhost:4000/cr/getUniversityLogo/${s_name}/${un_name}`)
+
+    fetch(
+      `http://localhost:4000/cr1/getUniversityLogo/${s_name}/${un_name}/${dp_name}/${sem}`
+    )
       .then((res) => res.json())
       .then((json) => {
+        console.log(json);
         this.setState({
           logo: json.logo,
           disclaimer: json.disclaimer,

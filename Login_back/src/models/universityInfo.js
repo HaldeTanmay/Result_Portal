@@ -8,6 +8,14 @@ const universityInfoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  department: {
+    type: String,
+    required: true,
+  },
+  sem: {
+    type: Number,
+    required: true,
+  },
   logo: {
     type: String,
     required: true,

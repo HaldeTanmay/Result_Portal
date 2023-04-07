@@ -103,18 +103,24 @@ const Navbar = () => {
         </StyledBurger>
 
         <Ul className="home_sidebar_links_container" open={open}>
-          <Link className="home_sidebar_links_container_Link" to="/">
-            <div> <AiFillHome/> Home</div>
-           
-          </Link>
-          <Link className="home_sidebar_links_container_Link" to="/about">
-            <div><BsFillPeopleFill/> About Us</div>
-          </Link>
-          {links.map((d) => (
-            <Link className="home_sidebar_links_container_Link" to={d.link}>
-              <div>{d.name}</div>
-            </Link>
-          ))}
+          <div>
+             <Link className="home_sidebar_links_container_Link" to="/">
+                <div> <AiFillHome/> Home</div>
+             </Link>
+          </div>
+           <div>
+             <Link className="home_sidebar_links_container_Link" to="/about">
+              <div><BsFillPeopleFill/> About</div>
+             </Link>
+           </div>
+          <div>
+              {links.map((d) => (
+                <Link className="home_sidebar_links_container_Link" to={d.link}>
+                  <div>{d.name}</div>
+                </Link>
+              ))}
+          </div>
+       
         </Ul>
       </div>
     </>

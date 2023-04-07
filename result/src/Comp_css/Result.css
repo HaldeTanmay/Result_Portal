@@ -475,14 +475,16 @@
   }
 }
 
- /* by rolling notes  */
+/* by rolling notes  */
 
- 
- .app_byRollingNotes_after{
+.app_byRollingNotes_after {
   display: flex;
-  justify-content: right;
-  font-family: AllText,sans-serif;
-  color: blue;
+  text-align: right;
+  flex-direction: column;
+  font-family: AllText, sans-serif;
+  color: gray;
+  margin-top: 50px;
+  font-weight: 900;
   /* background: -webkit-linear-gradient(
     45deg,
     #0c0050,
@@ -492,4 +494,16 @@
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
- }
+}
+.app_byRollingNotes_after_head {
+  font-family: Brand, sans-serif;
+  letter-spacing: 0.3mm;
+}
+.app_byRollingNotes_after_para {
+  font-family: "Freehand", cursive !important;
+}
+.rollingnotes {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 500;
+
+}

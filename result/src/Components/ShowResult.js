@@ -252,7 +252,16 @@ class ShowResult extends React.Component {
                 </marquee> */}
               </div>
             </div>
-            <p className="app_byRollingNotes_after">by Rollingnotes</p>
+            {/* <p className="app_byRollingNotes_after"><span style={{ color: "rgb(82, 82, 82)" }}>Parinam</span>&nbsp;by Rollingnotes</p> */}
+            <div className="app_byRollingNotes_after" >
+              <div className="app_byRollingNotes_after_head" style={{ color: "gray" }}>
+                <h1>Parinaam</h1>
+              </div>
+
+              <p  className="app_byRollingNotes_after_para">
+                by <span className="rollingnotes">RollingNotes</span>
+              </p>
+            </div>
           </div>
           {/* <button className='print_button' onClick={this.generateSimplePDF}>Print</button> */}
           <Pdf targetRef={ref} filename="Result.pdf" y={4} x={18} scale={0.8}>

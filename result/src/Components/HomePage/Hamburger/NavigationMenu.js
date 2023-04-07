@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { HiMenuAlt4, HiX } from "react-icons/hi";
+import { AiFillHome } from "react-icons/ai";
+import { BsFillPeopleFill } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
@@ -103,14 +104,15 @@ const Navbar = () => {
 
         <Ul className="home_sidebar_links_container" open={open}>
           <Link className="home_sidebar_links_container_Link" to="/">
-            Home
+            <div> <AiFillHome/> Home</div>
+           
           </Link>
           <Link className="home_sidebar_links_container_Link" to="/about">
-            About
+            <div><BsFillPeopleFill/> About Us</div>
           </Link>
           {links.map((d) => (
             <Link className="home_sidebar_links_container_Link" to={d.link}>
-              {d.name}
+              <div>{d.name}</div>
             </Link>
           ))}
         </Ul>

@@ -1,10 +1,25 @@
-.home_sidebar_links_container_Link{
-    padding: 2rem 0;
+.home_sidebar_links_container{
+  display: flex;
+  flex-direction: column;
+  justify-content:left;
+  align-items: flex-start
+}
+
+.home_sidebar_links_container_Link { 
+    padding: 1rem 1rem;
     color: #1b1b1b;
     color: #0066ff;
     font-weight: 900;
     font-size: 22px;
     text-decoration: none;
     font-family: AllText,sans-serif;
-  
+  }
+.home_sidebar_links_container_Link div{ 
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 5rem;
+  }
+.home_sidebar_links_container_Link div svg{ 
+   margin-right: 1rem;
   }

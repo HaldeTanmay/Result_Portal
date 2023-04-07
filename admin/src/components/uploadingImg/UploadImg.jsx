@@ -183,10 +183,7 @@ function UploadImage() {
                   style={{ width: "100%" }}
                   color="primary"
                 >
-                  {stateList.map((d) => (
-                    // <option value={d} key={d}>
-                    //   {d}
-                    // </option>
+                  {stateList.map((d) => ( 
                     <MenuItem value={d} key={d}>
                       {d}
                     </MenuItem>

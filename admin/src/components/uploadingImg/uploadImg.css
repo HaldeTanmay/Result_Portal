@@ -39,43 +39,7 @@
 .stateName {
   text-align: left;
 }
-/* .UploadImageContainer form div label {
-  flex: 1;
-} */
-
-/* .UploadImageContainer form div input,
-.UploadImageContainer form div select {
-  flex: 1;
-  padding: 7px 1vw;
-  border-radius: 8px;
-  border: 1px solid grey;
-} */
-
-/* .UploadImageContainer .typeFile input {
-  border: none;
-} */
-
-/* .UploadImageContainer form button {
-  width: 100%;
-  padding: 7px 1vw;
-  border-radius: 8px;
-  border: none;
-  text-transform: uppercase;
-} */
-/* .typeFile input[type=file]::file-selector-button {
-  margin-right: 20px;
-  border: none;
-  background: #084cdf;
-  padding: 10px 20px;
-  border-radius: 10px;
-  color: #fff;
-  cursor: pointer;
-  transition: background .2s ease-in-out;
-}
-
-.typeFile input[type=file]::file-selector-button:hover {
-  background: #0d45a5;
-} */
+ 
 .gap {
   margin: 20px 0;
   width: 100%;
@@ -84,20 +48,13 @@
   /* background-color: #0066ff; */
   width: 80%;
 }
-.state_college_container {
+.state_college_container { 
+  margin: 0;
   display: flex;
   gap: 20px;
-  
+  margin: 20px 0;
 }
-.stateName {
-  margin-bottom: 0;
-  background-color: #ececec;
-  
-}
-.collegeName {
-  margin-bottom: 0;
-  background-color: #ececec;
-}
+ 
 .custom_choose {
   width: 100%;
   color: gray;

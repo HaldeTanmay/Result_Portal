@@ -71,7 +71,7 @@
   font-family: AllText, sans-serif;
   text-transform: capitalize;
 }
-.app_subHeading > span {
+.app_subHeading  span a{
   font-family: "Poppins", sans-serif !important;
   font-weight: 900 !important;
   background: -webkit-linear-gradient(90deg, #ff40e2 0%, #63dcff 100%);

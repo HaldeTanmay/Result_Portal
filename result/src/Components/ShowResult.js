@@ -9,7 +9,6 @@ import QRCode from "react-qr-code";
 import WarningIcon from "@material-ui/icons/Warning";
 import { Accordion } from "@material-ui/core";
 
-
 // import Card from './Card';
 // import { useCallback } from "react";
 // const axios = require('axios');
@@ -49,14 +48,19 @@ class ShowResult extends React.Component {
     )
       .then((res) => res.json())
       .then((json) => {
+        console.log(json[0]);
         this.setState({
           items: json[0],
           DataisLoaded: true,
         });
       });
-    fetch(`http://localhost:4000/cr/getUniversityLogo/${s_name}/${un_name}`)
+
+    fetch(
+      `http://localhost:4000/cr1/getUniversityLogo/${s_name}/${un_name}/${dp_name}/${sem}`
+    )
       .then((res) => res.json())
       .then((json) => {
+        console.log(json);
         this.setState({
           logo: json.logo,
           disclaimer: json.disclaimer,
@@ -81,9 +85,8 @@ class ShowResult extends React.Component {
 
   updateClass() {
     var current = this.state.byRollingNotes;
-    this.setState({ byRollingNotes: !current })
+    this.setState({ byRollingNotes: !current });
   }
-
 
   render(props) {
     const ref = React.createRef();
@@ -124,10 +127,8 @@ class ShowResult extends React.Component {
         // </div>
       );
 
-
     // const hashedPassword = bcrypt.hash(name, 12)
     // console.log(hashedPassword);
-
 
     return (
       <div className="showresult_main">
@@ -268,10 +269,8 @@ class ShowResult extends React.Component {
             )}
           </Pdf>
         </div>
-        <div>
-        </div>
+        <div></div>
       </div>
-
     );
   }
 }

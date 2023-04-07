@@ -96,21 +96,24 @@ router.get("/cr/:s_name/:un_name/:dp_name/:year/:sem", async (req, res) => {
     res.send(e);
   }
 });
-router.get("/cr/:s_name/:un_name/:dp_name/:sem/:year/:exam_name/1", async (req, res) => {
-  try {
-    const data = await UserModel.find({
-      state: req.params.s_name,
-      un_name: req.params.un_name,
-      dp_name: req.params.dp_name,
-      sem: req.params.sem,
-      year: req.params.year,
-      exam_name: req.params.exam_name
-    });
-    res.send(data);
-  } catch (e) {
-    res.send(e);
+router.get(
+  "/cr/:s_name/:un_name/:dp_name/:sem/:year/:exam_name/1",
+  async (req, res) => {
+    try {
+      const data = await UserModel.find({
+        state: req.params.s_name,
+        un_name: req.params.un_name,
+        dp_name: req.params.dp_name,
+        sem: req.params.sem,
+        year: req.params.year,
+        exam_name: req.params.exam_name,
+      });
+      res.send(data);
+    } catch (e) {
+      res.send(e);
+    }
   }
-});
+);
 
 router.get(
   "/cre/:s_name/:un_name/:dp_name/:exam_name/:year/:sem/:roll",
@@ -243,6 +246,31 @@ router.get("/allUniversities/:state", async (req, res) => {
   }
 });
 
+// gets all the deparment names respective it's state and university name
+router.get("/allUniversities/:state/:un_name", async (req, res) => {
+  try {
+    const data = await UserModel.distinct("dp_name", {
+      state: req.params.state,
+      un_name: req.params.un_name,
+    });
+    res.send(data);
+  } catch (e) {
+    res.send(e);
+  }
+});
+// gets all the semester respective it's state, university name, deparment name
+router.get("/allUniversities/:state/:un_name/:dp_name", async (req, res) => {
+  try {
+    const data = await UserModel.distinct("sem", {
+      state: req.params.state,
+      un_name: req.params.un_name,
+    });
+    res.send(data);
+  } catch (e) {
+    res.send(e);
+  }
+});
+
 router.post("/adStatus", async (req, res) => {
   // console.log(req.body);
   // res.json({ message: "awesome" })
@@ -264,28 +292,37 @@ router.post("/adStatus", async (req, res) => {
 // upload the Image
 router.post("/admin/upload", async (req, res) => {
   try {
-    const { un_name, state, logo, disclaimer } = req.body;
-    if (!un_name || !state || !logo || !disclaimer) {
+    console.log("hello");
+    const { un_name, state, department, sem, logo, disclaimer } = req.body;
+    console.log(un_name, department, sem, state, logo, disclaimer);
+    if (!un_name || !state || !logo || !disclaimer || !department || !sem) {
       return res.status(400).json({ error: "Plz filled the data" });
     }
     const findLogo = await UniversityInfoModel.findOne({
-      un_name: un_name,
-      state: state,
+      un_name,
+      state,
+      department,
+      sem,
     });
+    console.log("test1");
     if (findLogo) {
       await UniversityInfoModel.updateOne(
-        { un_name, state },
+        { un_name, state, department, sem },
         { logo, disclaimer }
       );
+      console.log("test2");
       res.status(200).json({ message: "Logo Added !" });
     } else {
       const insertLogo = new UniversityInfoModel({
-        un_name: un_name,
-        state: state,
-        logo: logo,
-        disclaimer: disclaimer,
+        un_name,
+        state,
+        department,
+        sem,
+        logo,
+        disclaimer,
       });
       insertLogo.save();
+      console.log("test3");
       res.status(200).json({ message: "Logo Added !" });
     }
   } catch (e) {
@@ -295,25 +332,45 @@ router.post("/admin/upload", async (req, res) => {
 });
 
 // for getting university Logo
-router.get("/cr/getUniversityLogo/:state/:un_name", async (req, res) => {
-  try {
-    // const { un_name } = req.body;
-    // console.log(un_name);
-    // if (!un_name) {
-    //   return res.status(400).json({ error: "Plz filled the data" });
-    // }
-    console.log(req.params.un_name, req.params.state);
-    const findLogo = await UniversityInfoModel.findOne({
-      un_name: req.params.un_name,
-      state: req.params.state,
-    });
-    console.log(findLogo);
-    res.send(findLogo);
-  } catch (e) {
-    res.status(999).json({ message: e });
-    console.log(e);
+router.get(
+  "/cr1/getUniversityLogo/:state/:un_name/:department/:sem1",
+  async (req, res) => {
+    const convert = {
+      I: 1,
+      II: 2,
+      III: 3,
+      IV: 4,
+      V: 5,
+      VI: 6,
+      VII: 7,
+      VIII: 8,
+    };
+
+    try {
+      const findLogo1 = await UniversityInfoModel.find({
+        un_name: req.params.un_name,
+        state: req.params.state,
+        department: req.params.department,
+        sem: parseInt(convert[req.params.sem1]),
+      });
+
+      console.log("sd", findLogo1);
+      if (findLogo1.length != 0) {
+        res.send(findLogo1[0]);
+      } else {
+        const findLogo = await UniversityInfoModel.find({
+          un_name: req.params.un_name,
+          state: req.params.state,
+          department: req.params.department,
+        }).sort({ sem: -1 });
+        res.send(findLogo[0]);
+      }
+    } catch (e) {
+      res.status(999).json({ message: e });
+      console.log(e);
+    }
   }
-});
+);
 
 // ------------------------footer------------------------------
 // for uploading footer links

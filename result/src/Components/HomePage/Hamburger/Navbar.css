@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content:left;
-  align-items: flex-start
+  align-items: flex-start;
 }
 
 .home_sidebar_links_container_Link { 
@@ -14,11 +14,13 @@
     text-decoration: none;
     font-family: AllText,sans-serif;
   }
-.home_sidebar_links_container_Link div{ 
+.home_sidebar_links_container div{ 
+    width: 7rem;
+    height: 3rem;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-right: 5rem;
+    margin-right: 2rem;
   }
 .home_sidebar_links_container_Link div svg{ 
    margin-right: 1rem;
